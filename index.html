@@ -8,8 +8,8 @@
 
   <meta property="og:url" content="http://graphics.dailybruin.com/baseball-2017" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Baseball's Back | Daily Bruin" />
-  <meta property="og:description" content="The 2017 UCLA baseball season has just gotten underway. With a more experienced set of returners and an influx of impact freshmen, the Bruins have started on their road to Omaha, Nebraska."
+  <meta property="og:title" content="Men's Basketball | Daily Bruin" />
+  <meta property="og:description" content="Men's Basketball."
   />
   <meta property="og:image" content="http://dailybruin.com/images/2017/02/baseball_field.png" />
   <meta property="og:image:width" content="1920" />
@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:image:type" content="image/jpg" />
 
-  <title>Baseball's back | 2017</title>
+  <title>Men's Basketball | 2017</title>
   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica:400italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
@@ -28,22 +28,12 @@
 
 <body>
 
-  <!-- NAVBAR -->
-  <div class="container top">
+  <div class="container">
     <div class="row">
-      <div class="small-6 columns">
-        <div class="skewed"><span>Baseball's back</span></div>
-      </div>
-      <div class="small-6 columns">
-        <div class="desc-container">
-          <p class="description-text">
-            The 2017 UCLA baseball season has just gotten underway. With a more experienced set of returners and an influx of impact
-            freshmen, the Bruins have started on their road to Omaha, Nebraska.<b><br /><br /> Click on a player to see his stats and more.</b>
-          </p>
-        </div>
-      </div>
+      <h1>Header Illustration will be here</h1>
     </div>
     <div class="row">
+      <p>this field will get replaced with a basketball court:</p>
       <div class="small-12 columns" id="field-container">
         <img src="http://dailybruin.com/images/2017/02/baseball_field.png" id="graphic-image" usemap="#planetmap">
         <map name="planetmap">
@@ -80,7 +70,7 @@
     <div class="row">
       <div class="large-8 large-centered columns">
           <footer>
-              Cards written by <a href="mailto:dgottlieb@media.ucla.edu">David Gottlieb</a>. Page developed by <a href="https://github.com/H-Huang">Howard Huang</a> and <a href="https://github.com/paulinalei">Paulina Lei</a>. &copy; 2017 <a href="http://dailybruin.com/">Daily Bruin</a>.
+              <!--Page developed by <a href="https://github.com/H-Huang">Howard Huang</a> and <a href="https://github.com/paulinalei">Paulina Lei</a>. &copy; 2017 <a href="http://dailybruin.com/">Daily Bruin</a>.-->
           </footer>
         </div>
     </div>
@@ -91,122 +81,19 @@
     <!-- handlebars -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
 
+    <!-- what each card on the court will look like -->
     <script id="card-template" type="text/x-handlebars-template">
       {{#each .}}
         <div class="reveal large" id="{{this.name_no_space}}" data-reveal>
-          <div id="{{this.name_no_space}}Card" class="player-card">
-            <div class="front front-card-content card-sides" >
-              <div class="container">
-                <div class="row front-names">
-                  <h1>{{this.player_name}}</h1>
-                  <h2>{{this.abbr_position}}</h2>
-                </div>
-                <div class="row">
-                  <img class="front-card-mug" src="img/cards/web.sp.{{this.first_name}}.{{this.last_name}}.File.jpg"/>
-                  <p style="text-align: center; font-size: 9px;">({{this.photo_cred}})</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="back back-card-content card-sides">
-              <div class="container">
-                <div class="row player-top">
-                  <div class="small-6 medium-4 columns player-info">
-                    <p><u>Year:</u> {{this.year}}</p>
-                    <p><u>Height:</u> {{this.height}}</p>
-                    <p><u>Weight:</u> {{this.weight}} lbs</p>
-                    <p><u>Bats:</u> {{this.bats}}</p>
-                    <p><u>Throws:</u> {{this.throws}}</p>
-                    <div class="player-number">
-                      {{this.number}}
-                    </div>
-                  </div>
-                  <div class="small-6 medium-8 columns player-name">
-                    <h1>{{this.player_name}}</h1>
-                    <p>{{this.position}}</p>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="blurb">
-                    <div class="block-photo">
-                      <img src="{{this.muglink}}"/>
-                      <p style="font-size: 10px; color:gray; text-align:right;">UCLA Athletics</p>
-                    </div>
-                    {{this.blurb}}
-                  </div>
-                </div>
-
-                <div class="row player-stats">
-                  <hr />
-                  <!-- <p><div class="stats"><b>Player Statistics</b></div><div class="source">from {{this.source}}</div></p> -->
-                  <p><div class="stats"><b>{{this.source}}</b></div></p>
-                  <div class="stats-circle-container">
-                    {{#if this.type_position_player}}
-                      <div class="stats-circle small-2 columns">
-                        <p>G</p>
-                        <p id="stats-number">{{this.games}}</p>
-                      </div>
-                      <div class="stats-circle small-2 columns">
-                        <p>AVG</p>
-                        <p id="stats-number">{{this.avg}}</p>
-                      </div>
-                      <div class="stats-circle small-2 columns">
-                        <p>OBP</p>
-                        <p id="stats-number">{{this.obp}}</p>
-                      </div>
-                      <div class="stats-circle small-2 columns">
-                        <p>SLG</p>
-                        <p id="stats-number">{{this.slg}}</p>
-                      </div>
-                      <div class="stats-circle small-2 columns">
-                        <p>HR</p>
-                        <p id="stats-number">{{this.hr}}</p>
-                      </div>
-                      <div class="stats-circle small-2 columns">
-                        <p>RBI</p>
-                        <p id="stats-number">{{this.rbi}}</p>
-                      </div>
-                    {{else}}
-                      <div class="stats-circle small-2 small-offset-1 columns">
-                        <p>G / GS</p>
-                        <p id="stats-number">{{this.games}} / {{this.games_started}}</p>
-                      </div>
-                      <div class="stats-circle small-2 columns">
-                        <p>W-L</p>
-                        <p id="stats-number">{{this.w_l}}</p>
-                      </div>
-                      <div class="stats-circle small-2 columns">
-                        <p>ERA</p>
-                        <p id="stats-number">{{this.era}}</p>
-                      </div>
-                      <div class="stats-circle small-2 columns">
-                        <p>SO</p>
-                        <p id="stats-number">{{this.so}}</p>
-                      </div>
-                      <div class="stats-circle small-2 columns" style="float:left">
-                        <p>IP</p>
-                        <p id="stats-number">{{this.ip }}</p>
-                      </div>
-                    {{/if}}
-                  </div>
-                </div>
-              </div>
-          </div>
+          <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+         </button>
         </div>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <p class="flip-toggle">Click to flip the card.</p>
-      </div>
       {{/each}}
     </script>
 
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
-    <!-- for flipping cards -->
-    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 
     <!-- foundation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js"></script>

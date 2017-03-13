@@ -24,6 +24,8 @@
   <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Amiko" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" />
   <link rel="stylesheet" href="css/app.css" />
 </head>
@@ -103,11 +105,19 @@
           <button class="close-button" data-close aria-label="Close modal" type="button">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h1>{{this.name}}</h1>
-          <img src="img/players/{{this.last_name}}.jpg" alt="">
-          <h1>{{this.stats}}</h1>
-          <p>{{this.blurb}}</p>
-          <a href="{{this.link}}" target="_blank">Read more about {{this.name}}</a>
+          <div class="player-card">
+            <h1 id="player-name">{{this.name}}</h1>
+            <img id="player-img" src="img/players/{{this.last_name}}.jpg" alt="">
+            <div class="row">
+              {{#each this.stats}}
+                <div class="player-stats">{{this}}</div>
+                {{/each}}
+            </div>
+            <p>{{this.blurb}}</p>
+            <div class="player-link-div">
+              <a id="player-link" href="{{this.link}}" target="_blank">Read more about {{this.name}}</a>
+            </div>
+          </div>
         </div>
       {{/each}}
     </script>

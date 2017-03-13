@@ -23,8 +23,7 @@ $.ajax({
     var name = obj.gsx$player.$t;
     var blurbs = obj.gsx$blurbs.$t;
     var link = obj.gsx$link.$t;
-    // var stats = obj.gsx$finishedupdated31217.$t.split("/");
-    var stats = "hi";
+    var stats = obj.gsx$finishedupdated31217.$t.split("/");
     allPlayers.push(new BasketballPlayer(name, stats, blurbs, link));
   }
 
@@ -32,7 +31,7 @@ $.ajax({
   var source   = $("#card-template").html();
   var template = Handlebars.compile(source);
   var html    = template([allPlayers[0]]);
-  $("#cards-placeholders").replaceWith(html);
+  $("#cards-placeholder").replaceWith(html);
 
   init();
   

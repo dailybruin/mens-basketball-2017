@@ -24,6 +24,8 @@
   <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Amiko" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" />
   <link rel="stylesheet" href="css/app.css" />
 </head>
@@ -31,20 +33,28 @@
 <body>
 
   <div class="container">
-    <div class="row">
+    <div class="row" id="top-section">
+      <h1>UCLA Men's Basketball 2017</h1>
       <img src="img/bball_cover.jpg" alt="UCLA March Madness Illustration">
     </div>
     <div class="row">
-      <div class="small-12 columns" id="field-container">
+      <div class="small-12 large-10 large-offset-1 columns" id="field-container">
         <img src="img/basketball_graphic.png" id="graphic-image" usemap="#planetmap">
         <map name="planetmap">
           <area shape="circle" coords="670, 357, 55" a data-open="LonzoBall">
-
-
+          <area shape="circle" coords="192, 575, 55" a data-open="BryceAlford">
+          <area shape="circle" coords="911, 747, 55" a data-open="ThomasWelsh">
+          <area shape="circle" coords="426, 969, 55" a data-open="TJLeaf">
+          <area shape="circle" coords="1286, 954, 55" a data-open="IsaacHamilton">
+          <area shape="circle" coords="1430, 311, 55" a data-open="SteveAlford">
+          <area shape="circle" coords="1430, 465, 55" a data-open="AaronHoliday">
+          <area shape="circle" coords="1430, 621, 55" a data-open="IkeAnigbogu">
+          <area shape="circle" coords="1430, 776, 55" a data-open="GGGoloman">
       </div>
     </div>
 
     <div class="row">
+      
       <div class="bruin-by-numbers">
         <div class="number1">
           <p class="number">91.3</p>
@@ -60,7 +70,7 @@
         </div>
         <div class="number4">
           <p class="number">13</p>
-          Straight wins. UCLA didn’t drop a game until a loss  to then-No. 21 Oregon in Eugene on a buzzer beating 3. Their 13-0 start was the first time they went undefeated in nonconference play since the 1994-95 season where they also won the National Championship.
+          <p>Straight wins. UCLA didn’t drop a game until a loss  to then-No. 21 Oregon in Eugene on a buzzer beating 3. Their 13-0 start was the first time they went undefeated in nonconference play since the 1994-95 season where they also won the National Championship.</p>
         </div>
         <div class="number5">
           <p class="number">6</p>
@@ -97,20 +107,53 @@
     <!-- handlebars -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
 
+    <!--self defined handlebars templates-->
+    <script>
+      Handlebars.registerHelper('if_eq', function(a, b, opts) {
+      if(a == b) // Or === depending on your needs
+          return opts.fn(this);
+      else
+          return opts.inverse(this);
+      });
+
+      Handlebars.registerHelper('if_not_eq', function(a, b, opts) {
+          if(a != b) // Or === depending on your needs
+              return opts.fn(this);
+          else
+              return opts.inverse(this);
+      });
+    </script>
+
     <!-- what each card on the court will look like -->
     <script id="card-template" type="text/x-handlebars-template">
       {{#each .}}
-        <div class="reveal large" id="{{this.name_no_space}}" data-reveal>
+        <div class="reveal medium" id="{{this.name_no_space}}" data-reveal>
           <button class="close-button" data-close aria-label="Close modal" type="button">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h1>{{this.name}}</h1>
-          <img src="img/players/{{this.last_name}}.jpg" alt="">
-          {{#each this.stats}}
-            <p>{{this}}</p>
-          {{/each}}
-          <p>{{this.blurb}}</p>
-          <a href="{{this.link}}" target="_blank">Read more about {{this.name}}</a>
+          <div class="player-card">
+            <h1 id="player-name">{{this.name}}</h1>
+            {{#if_not_eq this.name "Steve Alford"}}
+              <img id="player-img" src="img/players/{{this.last_name}}.jpg" alt="">
+              <div class="row">
+                {{#each this.stats}}
+                  <div class="player-stats">{{this}}</div>
+                {{/each}}
+              </div>
+            {{else}}
+              <div class="row">
+                {{#each this.stats}}
+                  <div class="row">
+                    <div class="player-stats" style="line-height: 3em">{{this}}</div>
+                  </div>
+                {{/each}}
+              </div>
+            {{/if_not_eq}}
+            <p>{{this.blurb}}</p>
+            <div class="player-link-div">
+              <a id="player-link" href="{{this.link}}" target="_blank">Read more about {{this.name}}</a>
+            </div>
+          </div>
         </div>
       {{/each}}
     </script>
@@ -181,10 +224,12 @@
 
     <!-- Foundation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js"></script>
+
     <!-- Scroll -->
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/scroll.js"></script>
+
     <!-- templated data -->
     <script src="js/card-data.js"></script>
     <script src="js/bracket-data.js"></script>

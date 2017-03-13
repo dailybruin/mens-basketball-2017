@@ -3,11 +3,10 @@
 var allPlayers = [];
 
 class BasketballPlayer {
-  constructor(name, ppg, apg, rpg, blurbs, link) {
+  constructor(name, stats, blurbs, link) {
     this.name = name;
-    this.ppg = ppg;
-    this.apg = apg;
-    this.rpg = rpg;
+    this.name_no_space = (name.split(" ")).join("");
+    this.stats = stats;
     this.blurbs = blurbs;
     this.link = link;
   }
@@ -15,10 +14,25 @@ class BasketballPlayer {
 
 $.ajax({
   dataType: "json",
-  url: "https://spreadsheets.google.com/feeds/list/13EkyoRA9tyoefEb1A7-f4vKd94CyK_FijxxkbkW6CgI/od6/public/values?alt=json"
+  url: "https://spreadsheets.google.com/feeds/list/1sCSmajj5x0S5_ehTAuSr6a16-yOYCjsXjwPgivZBuiU/od6/public/values?alt=json"
 }).done(function (data) {
   data = data.feed.entry;
-  for (var player in data){
-    allPlayers.append(new BasketballPlayer(player, ppg, apg, rpg, blurbs, link));
+  for (var obj in data){
+    obj = data[obj];
+    var name = obj.gsx$player.$t;
+    var blurbs = obj.gsx$blurbs.$t;
+    var link = obj.gsx$link.$t;
+    // var stats = obj.gsx$finishedupdated31217.$t.split("/");
+    var stats = "hi";
+    allPlayers.push(new BasketballPlayer(name, stats, blurbs, link));
   }
+
+  //use handlebars to fill in the card templates
+  var source   = $("#card-template").html();
+  var template = Handlebars.compile(source);
+  var html    = template([allPlayers[0]]);
+  $("#cards-placeholders").replaceWith(html);
+
+  init();
+  
 });

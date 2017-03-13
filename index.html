@@ -32,51 +32,52 @@
 
   <div class="container">
     <div class="row">
-      <h1>Header Illustration will be here</h1>
+      <img src="img/bball_cover.jpg" alt="UCLA March Madness Illustration">
     </div>
     <div class="row">
-      <p>this field will get replaced with a basketball court:</p>
       <div class="small-12 columns" id="field-container">
         <img src="img/basketball_graphic.png" id="graphic-image" usemap="#planetmap">
         <map name="planetmap">
-              <area shape="circle" coords="670, 357, 55" a data-open="LonzoBall">
+          <area shape="circle" coords="670, 357, 55" a data-open="LonzoBall">
 
 
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="bruin-by-numbers">
+        <div class="number1">
+          <p class="number">91.3</p>
+          <p>Points UCLA averaged per game. The Bruins had one of the most electric offenses in the country and were ranked second nationally in offensive efficiency according to KenPom.com. They also led the NCAA in points per game by the end of the regular season.</p>
+        </div>
+        <div class="number2">
+          <p class="number">89</p>
+          <p>In defensive efficiency. As good as the Bruins are offensively, they struggled to find consistency on the defensive end. No Final Four team in the last ten years had a defensive efficiency higher than 30, but UCLA’s turned the corner in defense the last couple of months.</p>
+        </div>
+        <div class="number3">
+          <p class="number">21.7</p>
+          <p>Assists per game. No team shared the ball as much as the Bruins. Coach Steve Alford revamped the team to model the Golden State Warriors and it paid off with a 28-3 record.</p>
+        </div>
+        <div class="number4">
+          <p class="number">13</p>
+          Straight wins. UCLA didn’t drop a game until a loss  to then-No. 21 Oregon in Eugene on a buzzer beating 3. Their 13-0 start was the first time they went undefeated in nonconference play since the 1994-95 season where they also won the National Championship.
+        </div>
+        <div class="number5">
+          <p class="number">6</p>
+          <p>Players averaging 10 or more points per game. Senior Bryce Alford and freshman T.J. Leaf lead the Bruins with 16.2 points a game, but all five starters and sixth man Aaron Holiday are capable of lighting it up on any given night.</p>
+        </div>
+        <div class="number6">
+          <p class="number">1</p>
+          <p>Goal left for the team. In a postgame press conference, Lonzo Ball said the real season starts now. It’s the postseason and for the Bruins a chance to capture the 12th National title in program history and the first since 1995.</p>
+        </div>
       </div>
     </div>
 
     <div class="row">
       <div class="small-12 medium-8 columns">
-        <h1>2013 NCAA Tournament - Midwest Bracket</h1>
+        <h1>2017 - March Madness</h1>
         <div id="bracket-placeholder">
         </div>
-      </div>
-    </div>
-
-    <div class="bruin-by-numbers">
-      <div class="number1">
-        <p class="number">91.3</p>
-        <p>Points UCLA averaged per game. The Bruins had one of the most electric offenses in the country and were ranked second nationally in offensive efficiency according to KenPom.com. They also led the NCAA in points per game by the end of the regular season.</p>
-      </div>
-      <div class="number2">
-        <p class="number">89</p>
-        <p>In defensive efficiency. As good as the Bruins are offensively, they struggled to find consistency on the defensive end. No Final Four team in the last ten years had a defensive efficiency higher than 30, but UCLA’s turned the corner in defense the last couple of months.</p>
-      </div>
-      <div class="number3">
-        <p class="number">21.7</p>
-        <p>Assists per game. No team shared the ball as much as the Bruins. Coach Steve Alford revamped the team to model the Golden State Warriors and it paid off with a 28-3 record.</p>
-      </div>
-      <div class="number4">
-        <p class="number">13</p>
-        Straight wins. UCLA didn’t drop a game until a loss  to then-No. 21 Oregon in Eugene on a buzzer beating 3. Their 13-0 start was the first time they went undefeated in nonconference play since the 1994-95 season where they also won the National Championship.
-      </div>
-      <div class="number5">
-        <p class="number">6</p>
-        <p>Players averaging 10 or more points per game. Senior Bryce Alford and freshman T.J. Leaf lead the Bruins with 16.2 points a game, but all five starters and sixth man Aaron Holiday are capable of lighting it up on any given night.</p>
-      </div>
-      <div class="number6">
-        <p class="number">1</p>
-        <p>Goal left for the team. In a postgame press conference, Lonzo Ball said the real season starts now. It’s the postseason and for the Bruins a chance to capture the 12th National title in program history and the first since 1995.</p>
       </div>
     </div>
 
@@ -105,7 +106,9 @@
           </button>
           <h1>{{this.name}}</h1>
           <img src="img/players/{{this.last_name}}.jpg" alt="">
-          <h1>{{this.stats}}</h1>
+          {{#each this.stats}}
+            <p>{{this}}</p>
+          {{/each}}
           <p>{{this.blurb}}</p>
           <a href="{{this.link}}" target="_blank">Read more about {{this.name}}</a>
         </div>
@@ -116,28 +119,57 @@
     <script id="bracket-template" type="text/x-handlebars-template">
       <main id="tournament">
         <ul class="round round-1">
-          {{#each first-round}}
+          {{#each round1}}
             <li class="spacer">&nbsp;</li>
-
-            <li class="game game-top winner">{{name}} <span>73</span></li>
+            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
             <li class="game game-spacer">&nbsp;</li>
-            <li class="game game-bottom ">{{name}} <span>61</span></li>
-
+            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
             <li class="spacer">&nbsp;</li>
           {{/each}}
-          <li class="spacer">&nbsp;</li>
-
-          <li class="game game-top winner">Duke <span>73</span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom ">Albany <span>61</span></li>
-
-          <li class="spacer">&nbsp;</li>
         </ul>
         <ul class="round round-2">
+          <li class="spacer">&nbsp;</li>
+          {{#each round2}}
+            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
+            <li class="game game-spacer">&nbsp;</li>
+            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
+            <li class="spacer">&nbsp;</li>
+          {{/each}}
         </ul>
         <ul class="round round-3">
+          <li class="spacer">&nbsp;</li>
+          {{#each round3}}
+            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
+            <li class="game game-spacer">&nbsp;</li>
+            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
+            <li class="spacer">&nbsp;</li>
+          {{/each}}
         </ul>
         <ul class="round round-4">
+          <li class="spacer">&nbsp;</li>
+          {{#each round4}}
+            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
+            <li class="game game-spacer">&nbsp;</li>
+            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
+            <li class="spacer">&nbsp;</li>
+          {{/each}}
+        </ul>
+        <ul class="round round-5">
+          <li class="spacer">&nbsp;</li>
+          {{#each round5}}
+            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
+            <li class="game game-spacer">&nbsp;</li>
+            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
+            <li class="spacer">&nbsp;</li>
+          {{/each}}
+        <ul class="round round-6">
+          <li class="spacer">&nbsp;</li>
+          {{#each round6}}
+            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
+            <li class="game game-spacer">&nbsp;</li>
+            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
+            <li class="spacer">&nbsp;</li>
+          {{/each}}
         </ul>
       </main>
     </script>

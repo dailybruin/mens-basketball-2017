@@ -20,6 +20,7 @@
   margin: 2%;
   background-color: #51aae8;
 }
+
 /* BRACKET STYLING */
 
 /*
@@ -44,7 +45,7 @@ main{
 .round .spacer:last-child{ flex-grow:.5; }
 
 .round .game-spacer{
-flex-grow:1;
+  flex-grow:1;
 }
 
 /*
@@ -62,23 +63,23 @@ li.game{
 }
 
 li.game.winner{
-    font-weight:bold;
+  font-weight:bold;
 }
 
 li.game span{
-    float:right;
-    margin-right:5px;
+  float:right;
+  margin-right:5px;
 }
 
 li.game-top{ border-bottom:1px solid #aaa; }
 
-li.game-spacer{
-    border-right:1px solid #aaa;
-    min-height:40px;
+li.game-spacer{ 
+  border-right:1px solid #aaa;
+  min-height:40px;
 }
 
-li.game-bottom{
-    border-top:1px solid #aaa;
+li.game-bottom{ 
+  border-top:1px solid #aaa;
 }
 
 /* FINISH BRACKET STYLING */

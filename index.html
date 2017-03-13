@@ -35,29 +35,10 @@
     <div class="row">
       <p>this field will get replaced with a basketball court:</p>
       <div class="small-12 columns" id="field-container">
-        <img src="http://dailybruin.com/images/2017/02/baseball_field.png" id="graphic-image" usemap="#planetmap">
+        <img src="img/basketball_graphic.png" id="graphic-image" usemap="#planetmap">
         <map name="planetmap">
-              <area shape="circle" coords="1270, 1764, 96" a data-open="GavinJohns">
-              <area shape="circle" coords="1508, 1764, 96" a data-open="WillMclnerny">
-              <area shape="circle" coords="1020, 1764, 96" a data-open="DanielRosica">
-              <area shape="circle" coords="965, 875, 96" a data-open="NickValaika">
-              <area shape="circle" coords="639, 581, 96" a data-open="BrettStephens">
-              <area shape="circle" coords="1272, 332, 96" a data-open="DanielAmaral">
-              <area shape="circle" coords="1929, 585, 96" a data-open="MichaelToglia">
-              <area shape="circle" coords="1414, 800, 96" a data-open="ChaseStrumpf">
-              <area shape="circle" coords="880, 1126, 96" a data-open="RyanKreidler">
-              <area shape="circle" coords="1273, 1271, 96" a data-open="GriffinCanning">
-              <area shape="circle" coords="1647, 1125, 96" a data-open="SeanBouchard">
-              <area shape="circle" coords="1415, 1028, 96" a data-open="JakeHirabayashi">
-
-              <!-- starting rotation and bullpen -->
-              <area shape="circle" coords="257, 1167, 96" a data-open="LonzoBall" >
-              <area shape="circle" coords="257, 1419, 96" a data-open="JonOlsen" >
-              <area shape="circle" coords="257, 1665, 96" a data-open="JustinHooper" >
-              <area shape="circle" coords="2268, 1850, 96" a data-open="BrianGadsby" >
-              <area shape="circle" coords="2268, 1600, 96" a data-open="ScottBurke" >
-              <area shape="circle" coords="2268, 1350, 96" a data-open="MattWalker" >
-              <area shape="circle" coords="2268, 1100, 96" a data-open="MoisesCeja" >
+              <area shape="circle" coords="670, 357, 55" a data-open="LonzoBall">
+ 
 
       </div>
     </div>
@@ -199,9 +180,10 @@
             <span aria-hidden="true">&times;</span>
           </button>
           <h1>{{this.name}}</h1>
+          <img src="img/players/{{this.last_name}}.jpg" alt="">
           <h1>{{this.stats}}</h1>
           <p>{{this.blurb}}</p>
-          <p>{{this.link}}</p>
+          <a href="{{this.link}}" target="_blank">Read more about {{this.name}}</a>
         </div>
       {{/each}}
     </script>

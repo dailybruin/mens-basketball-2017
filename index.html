@@ -22,6 +22,8 @@
   <link href='https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica:400italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Amiko" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" />
   <link rel="stylesheet" href="css/app.css" />
 </head>
@@ -67,6 +69,33 @@
       <div id="cards-placeholder">
     </div>
 
+    <div class="bruin-by-numbers">
+      <div class="number1">
+        <p class="number">91.3</p>
+        <p>Points UCLA averaged per game. The Bruins had one of the most electric offenses in the country and were ranked second nationally in offensive efficiency according to KenPom.com. They also led the NCAA in points per game by the end of the regular season.</p>
+      </div>
+      <div class="number2">
+        <p class="number">89</p>
+        <p>In defensive efficiency. As good as the Bruins are offensively, they struggled to find consistency on the defensive end. No Final Four team in the last ten years had a defensive efficiency higher than 30, but UCLA’s turned the corner in defense the last couple of months.</p>
+      </div>
+      <div class="number3">
+        <p class="number">21.7</p>
+        <p>Assists per game. No team shared the ball as much as the Bruins. Coach Steve Alford revamped the team to model the Golden State Warriors and it paid off with a 28-3 record.</p>
+      </div>
+      <div class="number4">
+        <p class="number">13</p>
+        Straight wins. UCLA didn’t drop a game until a loss  to then-No. 21 Oregon in Eugene on a buzzer beating 3. Their 13-0 start was the first time they went undefeated in nonconference play since the 1994-95 season where they also won the National Championship.
+      </div>
+      <div class="number5">
+        <p class="number">6</p>
+        <p>Players averaging 10 or more points per game. Senior Bryce Alford and freshman T.J. Leaf lead the Bruins with 16.2 points a game, but all five starters and sixth man Aaron Holiday are capable of lighting it up on any given night.</p>
+      </div>
+      <div class="number6">
+        <p class="number">1</p>
+        <p>Goal left for the team. In a postgame press conference, Lonzo Ball said the real season starts now. It’s the postseason and for the Bruins a chance to capture the 12th National title in program history and the first since 1995.</p>
+      </div>
+    </div>
+
     <div class="row">
       <div class="large-8 large-centered columns">
           <footer>
@@ -92,23 +121,26 @@
       {{/each}}
     </script>
 
-    <!-- jquery -->
+    <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-    <!-- foundation -->
+    <!-- Foundation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js"></script>
 
+    <!-- Scroll -->
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/scroll.js"></script>
     <script src="js/jquery.rwdImageMaps.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.3.1/jquery.maphilight.min.js"></script>
 
+    <script>
+      $(document).ready(function(e) {
+        $('img[usemap]').rwdImageMaps();
+      });
+    </script>
 
     <script>
-    $(document).ready(function(e) {
-    $('img[usemap]').rwdImageMaps();
-    });
-    </script>
-       <script>
       $('img[usemap]').maphilight();
     </script>
   </body>

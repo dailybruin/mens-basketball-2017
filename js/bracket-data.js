@@ -1,15 +1,14 @@
 // get the player data from sheet
 
-var allPlayers = [];
+var allTeams = [];
 
-class BasketballPlayer {
-  constructor(name, ppg, apg, rpg, blurbs, link) {
+class Team {
+  constructor(name, record, offense, defensive, players) {
     this.name = name;
-    this.ppg = ppg;
-    this.apg = apg;
-    this.rpg = rpg;
-    this.blurbs = blurbs;
-    this.link = link;
+    this.record = record;
+    this.offense = offense;
+    this.defensive = defensive;
+    this.players = players;
   }
 }
 
@@ -19,6 +18,6 @@ $.ajax({
 }).done(function (data) {
   data = data.feed.entry;
   for (var player in data){
-    allPlayers.append(new BasketballPlayer(player, ppg, apg, rpg, blurbs, link));
+    allPlayers.append(new Team(name, record, offense, defense, players));
   }
 });

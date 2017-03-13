@@ -1,3 +1,5 @@
+/* BRACKET STYLING */
+
 /*
  *  Flex Layout Specifics
 */
@@ -56,3 +58,5 @@ li.game-spacer{
 li.game-bottom{ 
     border-top:1px solid #aaa;
 }
+
+/* FINISH BRACKET STYLING */

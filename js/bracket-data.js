@@ -1,6 +1,7 @@
 // get the player data from sheet
-
 var allTeams = [];
+
+var bracket = {"first-round": [], "second-round": [], "third-round": [], "fourth-round": []};
 
 class Team {
   constructor(name, record, offense, defense, players) {
@@ -21,7 +22,7 @@ $.ajax({
   }
 
   data = data.feed.entry;
-  for (var obj in data){
+  for (var obj in data) {
     obj = data[obj];
     var name = obj.gsx$team.$t;
     var info = obj.gsx$infoasbulletpointsundertheteamslogoasof31017.$t;
@@ -32,11 +33,16 @@ $.ajax({
     allTeams.push(new Team(name, record, offense, defense, players));
   }
 
-  console.log(allTeams);
-  //use handlebars to fill in the card templates
+  for (var i = 0; i < allTeams.length; i++) {
+    // bracket["first-round"].push(allTeams[i]);
+  }
+
+  //use handlebars to fill in the bracket template
   var source   = $("#bracket-template").html();
   var template = Handlebars.compile(source);
-  var html    = template([allPlayers[0]]);
+  var html    = template(bracket);
   $("#bracket-placeholder").replaceWith(html);
+
+  init();
 
 });

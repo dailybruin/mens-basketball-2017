@@ -5,12 +5,12 @@ html, body {
 
 @font-face {
   font-family: "BureauGrotesque";
-  src: url("fonts/ufonts.com_bureaugrotesque-threeseven.eot");
+  src: url("../fonts/ufonts.com_bureaugrotesque-threeseven.eot");
 }
 
 @font-face {
   font-family: "BureauGrotesque";
-  src: url("fonts/ufonts.com_bureaugrotesque-threeseven.ttf") format("truetype");
+  src: url("../fonts/ufonts.com_bureaugrotesque-threeseven.ttf") format("truetype");
 }
 
 /* card styling */
@@ -27,8 +27,7 @@ html, body {
 
 #player-name {
   text-align: center;
-  text-transform: uppercase;
-  font-family: 'BureauGrotesque', Verdana, Tahoma;
+  font-family: 'BureauGrotesque', Verdana, sans-serif;
 }
 
 #player-img {
@@ -68,6 +67,10 @@ html, body {
 #player-link {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
+}
+
+#bracket-header {
+  font-family: 'BureauGrotesque', Verdana, sans-serif;
 }
 
 .number {

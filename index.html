@@ -47,7 +47,7 @@
         <map name="planetmap">
           <area shape="circle" coords="670, 357, 55" a data-open="LonzoBall">
           <area shape="circle" coords="192, 575, 55" a data-open="BryceAlford">
-          <area shape="circle" coords="911, 747, 55" a data-open="ThomasWelsh">
+          <area shape="circle" coords="916, 746, 55" a data-open="ThomasWelsh">
           <area shape="circle" coords="426, 969, 55" a data-open="TJLeaf">
           <area shape="circle" coords="1286, 954, 55" a data-open="IsaacHamilton">
           <area shape="circle" coords="1430, 311, 55" a data-open="SteveAlford">
@@ -89,9 +89,11 @@
     </div>
 
     <div class="row timeline-section">
-            <div class = "banner">
+
+        <div class = "banner">
         <h1 class ="titles" data-text-shadow="Timeline">Timeline</h1>
         </div>
+<!--         <h1 style="text-align: right">Timeline will go here</h1> -->
     </div>
 
     <div class="row">
@@ -122,18 +124,36 @@
 
     <!--self defined handlebars templates-->
     <script>
-      Handlebars.registerHelper('if_eq', function(a, b, opts) {
-      if(a == b) // Or === depending on your needs
-          return opts.fn(this);
-      else
-          return opts.inverse(this);
-      });
 
-      Handlebars.registerHelper('if_not_eq', function(a, b, opts) {
-          if(a != b) // Or === depending on your needs
-              return opts.fn(this);
-          else
-              return opts.inverse(this);
+      Handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
+
+          if (arguments.length < 3)
+              throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
+
+          var operator = options.hash.operator || "==";
+
+          var operators = {
+              '==':       function(l,r) { return l == r; },
+              '===':      function(l,r) { return l === r; },
+              '!=':       function(l,r) { return l != r; },
+              '<':        function(l,r) { return l < r; },
+              '>':        function(l,r) { return l > r; },
+              '<=':       function(l,r) { return l <= r; },
+              '>=':       function(l,r) { return l >= r; },
+              'typeof':   function(l,r) { return typeof l == r; }
+          }
+
+          if (!operators[operator])
+              throw new Error("Handlerbars Helper 'compare' doesn't know the operator "+operator);
+
+          var result = operators[operator](lvalue,rvalue);
+
+          if( result ) {
+              return options.fn(this);
+          } else {
+              return options.inverse(this);
+          }
+
       });
     </script>
 
@@ -146,7 +166,7 @@
           </button>
           <div class="player-card">
             <h1 id="player-name">{{this.name}}</h1>
-            {{#if_not_eq this.name "Steve Alford"}}
+            {{#compare this.name "Steve Alford" operator="!="}}
               <img id="player-img" src="img/players/{{this.last_name}}.jpg" alt="">
               <div class="row">
                 {{#each this.stats}}
@@ -161,7 +181,7 @@
                   </div>
                 {{/each}}
               </div>
-            {{/if_not_eq}}
+            {{/compare}}
             <p>{{this.blurb}}</p>
             <div class="player-link-div">
               <a id="player-link" href="{{this.link}}" target="_blank">Read more about {{this.name}}</a>
@@ -173,38 +193,44 @@
 
     <!-- template for every team -->
     <script id="bracket-template" type="text/x-handlebars-template">
-      <main id="tournament">
-        <ul class="round round-1">
-          <li class="spacer">&nbsp;</li>
-          {{#each round1}}
-            <li class="spacer">&nbsp;</li>
-            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
-            <li class="game game-spacer">&nbsp;</li>
-            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
-            <li class="spacer">&nbsp;</li>
-          {{/each}}
-        </ul>
-        <ul class="round round-2">
-          <li class="spacer">&nbsp;</li>
-          {{#each round2}}
-            <li class="spacer">&nbsp;</li>
-            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
-            <li class="game game-spacer">&nbsp;</li>
-            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
-            <li class="spacer">&nbsp;</li>
-          {{/each}}
-        </ul>
-        <ul class="round round-3">
-          <li class="spacer">&nbsp;</li>
-          {{#each round3}}
-            <li class="spacer">&nbsp;</li>
-            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
-            <li class="game game-spacer">&nbsp;</li>
-            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
-            <li class="spacer">&nbsp;</li>
-          {{/each}}
-        </ul>
-      </main>
+      {{#each .}}
+        <div class="row">
+          <h1>{{@key}}</h1>
+          <main id="tournament">
+            {{#each this}}
+            <ul class="round round-{{@index}}">
+              <li class="spacer">&nbsp;</li>
+              {{#each this}}
+                {{#compare score_team1 score_team2 operator=">"}}
+                  <div class="wrapper">
+                    <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
+                    <div class="tooltip"><h1>asdfasdfasdfadsf</h1></div>
+                  </div>
+                  <li class="game game-spacer">&nbsp;</li>
+                  <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
+                  <li class="spacer">&nbsp;</li>
+                {{else}}
+                  {{#compare score_team1 score_team2 operator="<"}}
+                    <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li class="game game-bottom winner">{{team2}} <span>{{score_team2}}</span></li>
+                    <li class="spacer">&nbsp;</li>
+                  {{else}}
+                    <div class="wrapper">
+                      <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
+                      <div class="custom-tooltip"><h1>asdfasdfasdasfddfadsf</h1></div>
+                    </div>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li class="game game-bottom">{{team2}} <span>{{score_team2}}</span></li>
+                    <li class="spacer">&nbsp;</li>
+                  {{/compare}}
+                {{/compare}}
+              {{/each}}
+            </ul>
+            {{/each}}
+          </main>
+        </div>
+      {{/each}}
     </script>
 
     <script src="js/app.js"></script>

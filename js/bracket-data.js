@@ -3,6 +3,8 @@ var allTeams = [];
 
 var bracket = {"round1": [], "round2": [], "round3": [], "round4": [], "round5": [], "round6": []};
 
+var conferences = {"East": [], "Midwest": [], "West": [], "South": []};
+
 class Team {
   constructor(name, record, offense, defense, players) {
     this.name = name;
@@ -33,7 +35,7 @@ $.ajax({
     var players = isSafe(info.split("Players to Watch: ")[1]) ? info.split("Players to Watch: ")[1].replace(" ", "").split(" ") : [];
     map[name] = new Team(name, record, offense, defense, players);
     
-    var num_rounds = 6;
+    var num_rounds = 5;
     for (var i = 1; i <= num_rounds; i++) {
       var round_str = "gsx$round" + i;
       var round_str_score = "gsx$round" + i + "scores";
@@ -60,21 +62,25 @@ $.ajax({
     }
     bracket["round"+i] = new_compressed_data;
   }
-  bracket["round1"] = bracket["round1"].slice(0,4);
-  bracket["round2"] = bracket["round2"].slice(0,2);
-  bracket["round3"] = bracket["round3"].slice(0,1);
-  bracket["round4"] = bracket["round4"].slice(0);
+  // bracket["round1"] = bracket["round1"].slice(0,8);
+  // bracket["round2"] = bracket["round2"].slice(0,2);
+  // bracket["round3"] = bracket["round3"].slice(0,1);
+  // bracket["round4"] = bracket["round4"].slice(0);
+  // console.log(bracket);
 
-
-  bracket["round4"] = [];
-
-  console.log(bracket["round"+1]);
-  console.log(bracket["round"+2]);
+  var confs = ["East", "Midwest", "West", "South"];
+  var num_teams = [8, 4, 2, 1, 0];
+  for (var h = 0; h < num_rounds; h++ ) {
+    for (var i = 0; i < confs.length; i++) {
+      conferences[confs[i]].push(bracket["round" + (h+1)].slice(i*num_teams[h], (i+1)*num_teams[h]));
+    }
+  }
+  console.log(conferences);
 
   //use handlebars to fill in the bracket template
   var source   = $("#bracket-template").html();
   var template = Handlebars.compile(source);
-  var html    = template(bracket);
+  var html    = template(conferences);
   $("#bracket-placeholder").replaceWith(html);
 
   init();

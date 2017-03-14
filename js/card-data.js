@@ -7,7 +7,6 @@ class BasketballPlayer {
     this.name = name;
     this.last_name = name.split(" ")[1];
     this.name_no_space = (name.split(" ")).join("").replace(/\./g, "");
-    console.log(this.name_no_space);
     this.stats = stats;
     this.blurbs = blurbs;
     this.link = link;

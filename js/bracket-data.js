@@ -23,7 +23,6 @@ $.ajax({
   var map = {};
 
   data = data.feed.entry;
-  console.log(data);
   for (var obj in data) {
     obj = data[obj];
     var name = obj.gsx$team.$t;
@@ -47,8 +46,6 @@ $.ajax({
     }
   }
 
-  console.log(map);
-
   for (var i = 1; i <= num_rounds; i++) {
     var new_compressed_data = [];
     for (var j = 0; j < bracket["round"+i].length; j += 2) {
@@ -63,6 +60,14 @@ $.ajax({
     }
     bracket["round"+i] = new_compressed_data;
   }
+  bracket["round1"] = bracket["round1"].slice(0,4);
+  bracket["round2"] = bracket["round2"].slice(0,2);
+  bracket["round3"] = bracket["round3"].slice(0,1);
+  bracket["round4"] = bracket["round4"].slice(0);
+
+
+  bracket["round4"] = [];
+
   console.log(bracket["round"+1]);
   console.log(bracket["round"+2]);
 

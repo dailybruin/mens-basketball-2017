@@ -84,8 +84,12 @@
       </div>
     </div>
 
+    <div class="row timeline-section">
+        <h1>Timeline will go here</h1>
+    </div>
+
     <div class="row">
-      <div class="small-12 medium-8 columns">
+      <div class="small-12 medium-12 columns">
         <h1>2017 - March Madness</h1>
         <div id="bracket-placeholder">
         </div>
@@ -163,6 +167,7 @@
     <script id="bracket-template" type="text/x-handlebars-template">
       <main id="tournament">
         <ul class="round round-1">
+          <li class="spacer">&nbsp;</li>
           {{#each round1}}
             <li class="spacer">&nbsp;</li>
             <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
@@ -174,6 +179,7 @@
         <ul class="round round-2">
           <li class="spacer">&nbsp;</li>
           {{#each round2}}
+            <li class="spacer">&nbsp;</li>
             <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
             <li class="game game-spacer">&nbsp;</li>
             <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
@@ -183,32 +189,7 @@
         <ul class="round round-3">
           <li class="spacer">&nbsp;</li>
           {{#each round3}}
-            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
-            <li class="game game-spacer">&nbsp;</li>
-            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
             <li class="spacer">&nbsp;</li>
-          {{/each}}
-        </ul>
-        <ul class="round round-4">
-          <li class="spacer">&nbsp;</li>
-          {{#each round4}}
-            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
-            <li class="game game-spacer">&nbsp;</li>
-            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
-            <li class="spacer">&nbsp;</li>
-          {{/each}}
-        </ul>
-        <ul class="round round-5">
-          <li class="spacer">&nbsp;</li>
-          {{#each round5}}
-            <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
-            <li class="game game-spacer">&nbsp;</li>
-            <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
-            <li class="spacer">&nbsp;</li>
-          {{/each}}
-        <ul class="round round-6">
-          <li class="spacer">&nbsp;</li>
-          {{#each round6}}
             <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
             <li class="game game-spacer">&nbsp;</li>
             <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>

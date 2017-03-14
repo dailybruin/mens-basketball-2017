@@ -8,15 +8,15 @@
 
   <meta property="og:url" content="http://graphics.dailybruin.com/baseball-2017" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Men's Basketball | Daily Bruin" />
-  <meta property="og:description" content="Men's Basketball." />
+  <meta property="og:title" content="Ball of Nothing | Daily Bruin" />
+  <meta property="og:description" content="It is ball or nothing for UCLA's men's basketball team." />
   <meta property="og:image" content="http://dailybruin.com/images/2017/02/baseball_field.png" />
   <meta property="og:image:width" content="1920" />
   <meta property="og:image:height" content="1080" />
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:image:type" content="image/jpg" />
 
-  <title>Men's Basketball | 2017</title>
+  <title>Ball or Nothing | 2017</title>
   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica:400italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
@@ -234,7 +234,17 @@
                     <li class="game game-spacer">&nbsp;</li>
                     <div class="wrapper">
                       <li class="game game-bottom">{{team2}} <span>{{score_team2}}</span></li>
-                      <div class="custom-tooltip"><h1>asdfasdfasdasfddfadsf</h1></div>
+                      {{#if info_team2}}
+                        <div class="custom-tooltip">
+                          <img src="img/mascots/{{team2}}.png">
+                          <p>Record: {{info_team2.record}}</p>
+                          <p>Defense: {{info_team2.defense}}</p>
+                          <p>Offense: {{info_team2.offense}}</p>
+                          {{#each info_team2.players}}
+                            <p>{{this}}</p>
+                          {{/each}}
+                        </div>
+                      {{/if}}
                     </div>
                     <li class="spacer">&nbsp;</li>
                   {{/compare}}

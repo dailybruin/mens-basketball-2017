@@ -6,7 +6,7 @@ class BasketballPlayer {
   constructor(name, stats, blurbs, link) {
     this.name = name;
     this.last_name = name.split(" ")[1];
-    this.name_no_space = (name.split(" ")).join("");
+    this.name_no_space = (name.split(" ")).join("").replace(/\./g, "");
     this.stats = stats;
     this.blurbs = blurbs;
     this.link = link;

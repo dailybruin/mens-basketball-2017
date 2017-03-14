@@ -171,6 +171,7 @@ main{
 
 li.game{
   padding-left:20px;
+  z-index: -5;
 }
 
 li.game.winner{
@@ -182,7 +183,9 @@ li.game span{
   margin-right:5px;
 }
 
-li.game-top{ border-bottom:1px solid #aaa; }
+li.game-top{ 
+  border-bottom:1px solid #aaa;
+}
 
 li.game-spacer{ 
   border-right:1px solid #aaa;
@@ -195,16 +198,13 @@ li.game-bottom{
 
 /* tooltip */
 .wrapper {
-  z-index: 0;
-  background: #ececec;
   color: #555;
+  max-width: 40vw;
   text-align: center;
-  -webkit-transform: translateZ(0); /* webkit flicker fix */
-  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+  -webkit-font-smoothing: antialiased;
 }
 
 .wrapper .custom-tooltip {
-  z-index: 10;
   background: #1496bb;
   color: #fff;
   opacity: 0;

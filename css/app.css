@@ -123,7 +123,7 @@ html, body {
 }
 
 @media all and (max-width: 480px) {
-.bruin-by-numbers {font-size: 60%;}
+.bruin-by-numbers {width: 80%; font-size: 70%;}
 .number{font-size: 300%;}
 }
 /* FINISH BY THE NUMBER STYLING */

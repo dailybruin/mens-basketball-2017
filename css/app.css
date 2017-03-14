@@ -454,6 +454,7 @@ footer {
             }
             .timeline {
                 width: 400px;
+                margin: 0 auto;
             }
             .timeline .timeline-item {
                 width: 100%;
@@ -530,5 +531,11 @@ footer {
                 box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
             }
 
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
 h1{ font-size: 23px;
     font-family: 'Fjalla One', serif;}

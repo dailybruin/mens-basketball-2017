@@ -16,17 +16,17 @@ h1 {
   text-align: center;
 }
 /* banner */
-    #banner{
+    .banner{
        background-color: #3377ff;
     }   
 /* headline styles */
-    #titletext{
+    .titles{
         font-size:75px;
         font-weight: 900;
         text-shadow: .04em .04em 0 #3377ff;
         z-index:1;
     }
-     #titletext, #titletext:after {
+     .titles, .titles:after {
         font-family: 'Raleway', sans-serif;
         color: rgba(0,0,0,.5);
         text-align: center;
@@ -39,7 +39,7 @@ h1 {
         letter-spacing: .1em;
         padding: .2em 0 .25em 0;
     }
-     #titletext:after{
+     .titles:after{
         content: attr(data-text-shadow);
         color: transparent;
         text-shadow: none;
@@ -168,7 +168,7 @@ h1 {
 .bruin-by-numbers {width: 90%; font-size: 80%;}
 .number-section > h1 {text-align: center;}
 .number{font-size: 375%;}
-#titletext{font-size: 250%}
+.titles{font-size: 250%}
 }
 /* FINISH BY THE NUMBER STYLING */
 

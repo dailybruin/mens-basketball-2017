@@ -13,6 +13,45 @@ html, body {
   src: url("../fonts/ufonts.com_bureaugrotesque-threeseven.ttf") format("truetype");
 }
 
+/* banner */
+    #banner{
+       background-color: #3377ff;
+    }   
+/* headline styles */
+    #titletext{
+        font-size:75px;
+        font-weight: 900;
+        text-shadow: .04em .04em 0 #3377ff;
+        z-index:1;
+    }
+     #titletext, #titletext:after {
+        font-family: 'Raleway', sans-serif;
+        color: rgba(0,0,0,.5);
+        text-align: center;
+        text-transform: uppercase;
+        position: relative;
+        top: 45%;
+        width: 100%;
+        color: gold;//same as the color surrounding the headline
+        white-space: nowrap;
+        letter-spacing: .1em;
+        padding: .2em 0 .25em 0;
+    }
+     #titletext:after{
+        content: attr(data-text-shadow);
+        color: transparent;
+        text-shadow: none;
+        position: absolute;
+        left: .0875em;
+        top: .0875em;
+        z-index: -1;
+        background: linear-gradient(45deg, transparent 25%, white 25%, white 50%, transparent 50%, transparent 75%, white 75%, white);
+        background-size:4px 4px;
+        -webkit-background-clip: text;  
+        background-clip: text;  
+    }
+/* END BANNER */
+
 /* top part */
 
 #top-section {
@@ -124,7 +163,8 @@ html, body {
 
 @media all and (max-width: 480px) {
 .bruin-by-numbers {width: 80%; font-size: 70%;}
-.number{font-size: 300%;}
+.number-section > h1 {text-align: center;}
+.number{font-size: 375%;}
 }
 /* FINISH BY THE NUMBER STYLING */
 

@@ -196,7 +196,7 @@
     <script id="bracket-template" type="text/x-handlebars-template">
       {{#each .}}
         <div class="row">
-          <h1>{{@key}}</h1>
+          <h1 class ="titles" data-text-shadow="{{@key}}">{{@key}}</h1>
           <main id="tournament">
             {{#each this}}
             <ul class="round round-{{@index}}">
@@ -219,10 +219,23 @@
                   {{else}}
                     <div class="wrapper">
                       <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
-                      <div class="custom-tooltip"><h1>asdfasdfasdasfddfadsf</h1></div>
+                      {{#if info_team1}}
+                        <div class="custom-tooltip">
+                          <img src="img/mascots/{{team1}}.png">
+                          <p>Record: {{info_team1.record}}</p>
+                          <p>Defense: {{info_team1.defense}}</p>
+                          <p>Offense: {{info_team1.offense}}</p>
+                          {{#each info_team1.players}}
+                            <p>{{this}}</p>
+                          {{/each}}
+                        </div>
+                      {{/if}}
                     </div>
                     <li class="game game-spacer">&nbsp;</li>
-                    <li class="game game-bottom">{{team2}} <span>{{score_team2}}</span></li>
+                    <div class="wrapper">
+                      <li class="game game-bottom">{{team2}} <span>{{score_team2}}</span></li>
+                      <div class="custom-tooltip"><h1>asdfasdfasdasfddfadsf</h1></div>
+                    </div>
                     <li class="spacer">&nbsp;</li>
                   {{/compare}}
                 {{/compare}}

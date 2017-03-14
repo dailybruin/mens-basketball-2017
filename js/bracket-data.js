@@ -1,5 +1,4 @@
 // get the player data from sheet
-var allTeams = [];
 
 var bracket = {"round1": [], "round2": [], "round3": [], "round4": [], "round5": [], "round6": []};
 
@@ -29,10 +28,10 @@ $.ajax({
     obj = data[obj];
     var name = obj.gsx$team.$t;
     var info = obj.gsx$infoasbulletpointsundertheteamslogoasof31017.$t;
-    var record = isSafe(info.split("Record: ")[1]) ? info.split("Record: ")[1].substr(4) : "";
-    var offense = isSafe(info.split("Offensive efficiency: ")[1]) ? info.split("Offensive efficiency: ")[1].substr(1) : "";
-    var defense = isSafe(info.split("Defensive efficiency: ")[1]) ? info.split("Defensive efficiency: ")[1].substr(1) : "";
-    var players = isSafe(info.split("Players to Watch: ")[1]) ? info.split("Players to Watch: ")[1].replace(" ", "").split(" ") : [];
+    var record = isSafe(info.split("Record: ")[1]) ? info.split("Record: ")[1].substr(0,4) : "";
+    var offense = isSafe(info.split("Offensive efficiency: ")[1]) ? info.split("Offensive efficiency: ")[1].substr(0,2).replace(/,/g,"") : "";
+    var defense = isSafe(info.split("Defensive efficiency: ")[1]) ? info.split("Defensive efficiency: ")[1].substr(0,2).replace(/,/g,"") : "";
+    var players = isSafe(info.split("Players to Watch: ")[1]) ? info.split("Players to Watch: ")[1].replace(/ /g, "").split(",") : [];
     map[name] = new Team(name, record, offense, defense, players);
     
     var num_rounds = 5;
@@ -48,6 +47,8 @@ $.ajax({
     }
   }
 
+  console.log(map);
+
   for (var i = 1; i <= num_rounds; i++) {
     var new_compressed_data = [];
     for (var j = 0; j < bracket["round"+i].length; j += 2) {
@@ -62,11 +63,6 @@ $.ajax({
     }
     bracket["round"+i] = new_compressed_data;
   }
-  // bracket["round1"] = bracket["round1"].slice(0,8);
-  // bracket["round2"] = bracket["round2"].slice(0,2);
-  // bracket["round3"] = bracket["round3"].slice(0,1);
-  // bracket["round4"] = bracket["round4"].slice(0);
-  // console.log(bracket);
 
   var confs = ["East", "Midwest", "West", "South"];
   var num_teams = [8, 4, 2, 1, 0];
@@ -76,6 +72,7 @@ $.ajax({
     }
   }
   console.log(conferences);
+  console.log(conferences["East"][0][0].info_team1);
 
   //use handlebars to fill in the bracket template
   var source   = $("#bracket-template").html();

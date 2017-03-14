@@ -208,7 +208,7 @@ main{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  width:200px;
+  width: 10vw;
   list-style:none;
   padding:0;
 }

@@ -46,3 +46,361 @@ h1 {
 #top-section {
   max-width: 100vw;
 }
+
+.main-title {
+  margin: 0;
+  padding: 50px 25px;
+}
+
+/* card styling */
+
+.court-section {
+  border-left: 10px solid #3377ff;
+  border-bottom: 10px solid #3377ff;
+}
+
+#field-container img {
+  display: block;
+  margin: auto;
+}
+
+.reveal {
+  text-align: center;
+}
+
+.player-card {
+  height: 100%;
+  width: 100%;
+}
+
+#player-name {
+  text-align: center;
+  font-family: 'BureauGrotesque', Verdana, sans-serif;
+}
+
+#player-img {
+  display: block;
+  margin: auto;
+  width: 60%;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.all-stats {
+  display: block;
+}
+
+.player-stats {
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  color: gold;
+  border-radius: 3px;
+  background-color: #3377ff;
+  width: 20%;
+  padding: 5px;
+  margin: 10px;
+  display: inline;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.player-link-div {
+  background-color: rgba(211, 211, 211, 1);
+  padding: 5px;
+  width: 50%;
+  display: block;
+  margin: auto;
+  border-radius: 3px;
+}
+
+#player-link {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+/* BY THE NUMBER STYLING */
+
+.number-section {
+  border-right: 10px solid #3377ff;
+  border-bottom: 10px solid #3377ff;
+  text-align: center;
+}
+
+.number {
+  text-align: center;
+  font-size: 70px;
+  color: gold;
+  font-family: 'Amiko', sans-serif;
+}
+
+.bruin-by-numbers {
+  width: 60%;
+  display: block;
+  margin: auto;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
+.bruin-by-numbers > div {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 3% 7%;
+  margin: 3%;
+  background-color: #3377ff;
+  color: white;
+  font-size: 120%;
+}
+
+@media all and (max-width: 480px) {
+.bruin-by-numbers {width: 90%; font-size: 80%;}
+.number-section > h1 {text-align: center;}
+.number{font-size: 375%;}
+.titles{font-size: 250%}
+}
+/* FINISH BY THE NUMBER STYLING */
+
+/* TIMELINE STYLING */
+
+.timeline-section {
+  border-left: 10px solid #3377ff;
+  border-bottom: 10px solid #3377ff;
+}
+
+/* FINISH TIMELINE STYLING */
+
+/* BRACKET STYLING */
+
+/*
+ *  Flex Layout Specifics
+*/
+#bracket-header {
+  font-family: 'BureauGrotesque', Verdana, sans-serif;
+}
+
+main{
+  display:flex;
+  flex-direction:row;
+  max-width: 100vw;
+}
+
+.round{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width: 10vw;
+  list-style:none;
+  padding:0;
+}
+
+.round .spacer{ flex-grow:1; }
+.round .spacer:first-child,
+.round .spacer:last-child{ flex-grow:.5; }
+
+.round .game-spacer{
+  flex-grow:1;
+}
+
+/*
+ *  General Styles
+*/
+
+li.game{
+  padding-left:20px;
+  z-index: -5;
+}
+
+li.game.winner{
+  font-weight:bold;
+}
+
+li.game span{
+  float:right;
+  margin-right:5px;
+}
+
+li.game-top{ 
+  border-bottom:3px solid #aaa;
+}
+
+li.game-spacer{ 
+  border-right:3px solid #aaa;
+  min-height:40px;
+}
+
+li.game-bottom{ 
+  border-top:3px solid #aaa;
+}
+
+
+/* FINISH BRACKET STYLING */
+/* tooltip */
+.wrapper {
+  color: #555;
+  max-width: 40vw;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper .custom-tooltip {
+  background: #1496bb;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  -webkit-transform: translateY(10px);
+     -moz-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+       -o-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: all .25s ease-out;
+     -moz-transition: all .25s ease-out;
+      -ms-transition: all .25s ease-out;
+       -o-transition: all .25s ease-out;
+          transition: all .25s ease-out;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+     -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+      -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+  
+.wrapper:hover .custom-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .custom-tooltip {
+  display: none;
+}
+
+.lte8 .wrapper:hover .custom-tooltip {
+  display: block;
+}
+
+/* FINISH BRACKET STYLING */
+
+
+div{
+                font-family: Helvetica, Arial, sans-serif;
+                box-sizing: border-box;
+            }
+            .timeline {
+                width: 400px;
+                margin: 0 auto;
+            }
+            .timeline .timeline-item {
+                width: 100%;
+                float: left;
+            }
+            
+            .timeline .timeline-item .info, .timeline .timeline-item .year {
+               /* color: #eee;*/
+                display: block;
+                float:left;
+                /*
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                transition: all 1s ease;
+                */
+            }
+            
+            .timeline .timeline-item.close .info, .timeline .timeline-item.close .year {
+                color: #ccc;
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                transition: all 1s ease;
+            }
+            .timeline .timeline-item .year {
+                font-size: 24px;
+                font-weight: bold;
+                width: 22%;
+            }
+            .timeline .timeline-item .info {
+                width: 100%;
+                width: 78%;
+                margin-left: -2px;
+                padding: 0 0 40px 35px;
+                border-left: 4px solid #aaa;
+                font-size: 14px;
+                line-height: 20px;
+            }
+            .timeline .timeline-item .marker {
+                background-color: #fff;
+                border: 4px solid #aaa;
+                height: 20px;
+                width: 20px;
+                border-radius: 100px;
+                display: block;
+                float: right;
+                margin-right: -14px;
+                z-index: 2000;
+                position: relative;
+            }
+            /*
+            .timeline .timeline-item.active .info, .timeline .timeline-item:hover .info {
+                color: #444;
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                transition: all 1s ease;
+            }
+            .timeline .timeline-item.active .year, .timeline .timeline-item:hover .year {
+                color: #9DB668;
+            }
+            .timeline .timeline-item .marker .dot {
+                background-color: white;
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                transition: all 1s ease;
+                display: block;
+                border: 4px solid white;
+                height: 12px;
+                width: 12px;
+                border-radius: 100px;
+                float: right;
+                z-index: 2000;
+                position: relative;
+            }
+            */
+            .timeline .timeline-item.active .marker .dot, .timeline .timeline-item:hover .marker .dot {
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                transition: all 1s ease;
+                background-color: #9DB668;
+                box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+            }
+
+
+.fade {
+
+  opacity: 0;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+h1{ font-size: 23px;
+    font-family: 'Fjalla One', serif;}
+
+
+.star {
+        visibility: hidden;
+    }
+
+.fadeIn {
+        -webkit-animation: animat_show 0.8s;
+        animation: animat_show 0.8s;
+        visibility: visible !important;
+    }
+
+    @-webkit-keyframes animat_show{
+        0%{opacity:0}
+        100%{opacity:1}
+    }

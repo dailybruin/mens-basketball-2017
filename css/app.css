@@ -12,57 +12,46 @@ html, body {
   font-family: "BureauGrotesque";
   src: url("../fonts/ufonts.com_bureaugrotesque-threeseven.ttf") format("truetype");
 }
-
 h1 {
   text-align: center;
 }
-
-
 /* banner */
-
-.banner {
-  background-color: #3377ff;
-}
-
-
+    .banner{
+       background-color: #3377ff;
+    }   
 /* headline styles */
-
-.titles {
-  font-size: 75px;
-  font-weight: 900;
-  text-shadow: .04em .04em 0 #3377ff;
-  z-index: 1;
-}
-
-.titles,
-.titles:after {
-  font-family: 'Raleway', sans-serif;
-  color: rgba(0, 0, 0, .5);
-  text-align: center;
-  position: relative;
-  top: 45%;
-  width: 100%;
-  color: gold;
-  white-space: nowrap;
-  letter-spacing: .1em;
-  padding: .2em 0 .25em 0;
-}
-
-.titles:after {
-  content: attr(data-text-shadow);
-  color: transparent;
-  text-shadow: none;
-  position: absolute;
-  left: .0875em;
-  top: .0875em;
-  z-index: -1;
-  background: linear-gradient(45deg, transparent 25%, white 25%, white 50%, transparent 50%, transparent 75%, white 75%, white);
-  background-size: 4px 4px;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-
+    .titles{
+        font-size:75px;
+        font-weight: 900;
+        text-shadow: .04em .04em 0 #3377ff;
+        z-index:1;
+    }
+     .titles, .titles:after {
+        font-family: 'Raleway', sans-serif;
+        color: rgba(0,0,0,.5);
+        text-align: center;
+        text-transform: uppercase;
+        position: relative;
+        top: 45%;
+        width: 100%;
+        color: gold;//same as the color surrounding the headline
+        white-space: nowrap;
+        letter-spacing: .1em;
+        padding: .2em 0 .25em 0;
+    }
+     .titles:after{
+        content: attr(data-text-shadow);
+        color: transparent;
+        text-shadow: none;
+        position: absolute;
+        left: .0875em;
+        top: .0875em;
+        z-index: -1;
+        background: linear-gradient(45deg, transparent 25%, white 25%, white 50%, transparent 50%, transparent 75%, white 75%, white);
+        background-size:4px 4px;
+        -webkit-background-clip: text;  
+        background-clip: text;  
+    }
 /* END BANNER */
 
 /* top part */
@@ -78,8 +67,9 @@ h1 {
 /* card styling */
 
 .court-section {
-  border-left: 10px solid #3377ff;
-  border-bottom: 10px solid #3377ff;
+  border-radius: 0px 0px 0px 15px;
+  border-left: 10px solid #4CA3FB;
+  border-bottom: 10px solid #4CA3FB;
 }
 
 #field-container img {
@@ -143,8 +133,9 @@ h1 {
 /* BY THE NUMBER STYLING */
 
 .number-section {
-  border-right: 10px solid #3377ff;
-  border-bottom: 10px solid #3377ff;
+  border-radius: 0px 0px 15px 0px;
+  border-right: 10px solid #4CA3FB;
+  border-bottom: 10px solid #4CA3FB;
   text-align: center;
 }
 
@@ -184,8 +175,9 @@ h1 {
 /* TIMELINE STYLING */
 
 .timeline-section {
-  border-left: 10px solid #3377ff;
-  border-bottom: 10px solid #3377ff;
+  border-radius: 0px 0px 0px 15px;
+  border-left: 10px solid #4CA3FB;
+  border-bottom: 10px solid #4CA3FB;
 }
 
 /* FINISH TIMELINE STYLING */
@@ -227,7 +219,6 @@ main{
 
 li.game{
   padding-left:20px;
-  z-index: -5;
 }
 
 li.game.winner{
@@ -239,9 +230,7 @@ li.game span{
   margin-right:5px;
 }
 
-li.game-top{ 
-  border-bottom:1px solid #aaa;
-}
+li.game-top{ border-bottom:1px solid #aaa; }
 
 li.game-spacer{ 
   border-right:1px solid #aaa;
@@ -256,13 +245,16 @@ li.game-bottom{
 /* FINISH BRACKET STYLING */
 /* tooltip */
 .wrapper {
+  z-index: 0;
+  background: #ececec;
   color: #555;
-  max-width: 40vw;
   text-align: center;
-  -webkit-font-smoothing: antialiased;
+  -webkit-transform: translateZ(0); /* webkit flicker fix */
+  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
 }
 
 .wrapper .custom-tooltip {
+  z-index: 10;
   background: #1496bb;
   color: #fff;
   opacity: 0;

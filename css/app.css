@@ -12,7 +12,9 @@ html, body {
   font-family: "BureauGrotesque";
   src: url("../fonts/ufonts.com_bureaugrotesque-threeseven.ttf") format("truetype");
 }
-
+h1 {
+  text-align: center;
+}
 /* banner */
     #banner{
        background-color: #3377ff;
@@ -134,6 +136,7 @@ html, body {
   border-radius: 0px 0px 15px 0px;
   border-right: 10px solid #4CA3FB;
   border-bottom: 10px solid #4CA3FB;
+  text-align: center;
 }
 
 .number {
@@ -158,13 +161,14 @@ html, body {
   margin: 3%;
   background-color: #3377ff;
   color: white;
-  font-size: 100%;
+  font-size: 120%;
 }
 
 @media all and (max-width: 480px) {
-.bruin-by-numbers {width: 80%; font-size: 70%;}
+.bruin-by-numbers {width: 90%; font-size: 80%;}
 .number-section > h1 {text-align: center;}
 .number{font-size: 375%;}
+#titletext{font-size: 250%}
 }
 /* FINISH BY THE NUMBER STYLING */
 

@@ -192,8 +192,10 @@
               <li class="spacer">&nbsp;</li>
               {{#each this}}
                 {{#compare score_team1 score_team2 operator=">"}}
-                
-                  <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
+                  <div class="wrapper">
+                    <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
+                    <div class="tooltip"><h1>asdfasdfasdfadsf</h1></div>
+                  </div>
                   <li class="game game-spacer">&nbsp;</li>
                   <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
                   <li class="spacer">&nbsp;</li>
@@ -204,7 +206,10 @@
                     <li class="game game-bottom winner">{{team2}} <span>{{score_team2}}</span></li>
                     <li class="spacer">&nbsp;</li>
                   {{else}}
-                    <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
+                    <div class="wrapper">
+                      <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
+                      <div class="custom-tooltip"><h1>asdfasdfasdasfddfadsf</h1></div>
+                    </div>
                     <li class="game game-spacer">&nbsp;</li>
                     <li class="game game-bottom">{{team2}} <span>{{score_team2}}</span></li>
                     <li class="spacer">&nbsp;</li>

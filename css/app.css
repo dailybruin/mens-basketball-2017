@@ -18,61 +18,38 @@ h1 {
 }
 
 
-/* banner */
+/* headline styles */
 
 .banner {
   background-color: #3377ff;
 }
 
 
-/* headline styles */
-
 .titles {
   font-size: 75px;
   font-weight: 900;
   text-shadow: .04em .04em 0 #3377ff;
+  padding: 10px;
   z-index: 1;
 }
 
 .titles,
 .titles:after {
   font-family: 'Raleway', sans-serif;
-  color: rgba(0, 0, 0, .5);
-  text-align: center;
-  position: relative;
-  top: 45%;
-  width: 100%;
-  color: gold;/ /*wtf why does adding this slash make it scale correctly*/
-  white-space: nowrap;
-  letter-spacing: .1em;
-  padding: .2em 0 .25em 0;
+  color: gold;
 }
-
-.titles:after {
-  content: attr(data-text-shadow);
-  color: transparent;
-  text-shadow: none;
-  position: absolute;
-  left: .0875em;
-  top: .0875em;
-  z-index: -1;
-  background: linear-gradient(45deg, transparent 25%, white 25%, white 50%, transparent 50%, transparent 75%, white 75%, white);
-  background-size: 4px 4px;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
 
 /* END BANNER */
 
 /* top part */
 
 #top-section {
-  max-width: 95vw;
+  max-width: 100vw;
 }
 
-#top-section h1 {
-  text-align: center;
+.main-title {
+  margin: 0;
+  padding: 50px 25px;
 }
 
 /* card styling */
@@ -202,6 +179,7 @@ h1 {
 main{
   display:flex;
   flex-direction:row;
+  max-width: 100vw;
 }
 
 .round{

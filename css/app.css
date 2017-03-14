@@ -119,9 +119,13 @@ html, body {
   margin: 3%;
   background-color: #3377ff;
   color: white;
-  font-size: 18px;
+  font-size: 100%;
 }
 
+@media all and (max-width: 480px) {
+.bruin-by-numbers {font-size: 60%;}
+.number{font-size: 300%;}
+}
 /* FINISH BY THE NUMBER STYLING */
 
 /* TIMELINE STYLING */

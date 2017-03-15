@@ -282,7 +282,7 @@ li.game-bottom{
 }
 
 .lte8 .wrapper:hover .custom-tooltip {
-  display: block;
+  display:=block;
 }
 
 .custom-tooltip {
@@ -438,3 +438,25 @@ img{
         0%{opacity:0}
         100%{opacity:1}
     }
+
+/* media queries */
+@media (min-width: 320px) and (max-width: 700px) {
+  #graphic-image {
+    display: block;
+    margin: auto;
+  }
+
+  .custom-tooltip {
+    width: 80%;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1400px) {
+  .wrapper {
+    font-size: 40px;
+  }
+  .custom-tooltip {
+    width: 50%;
+    font-size: 40px;
+  }
+}

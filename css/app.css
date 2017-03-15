@@ -394,14 +394,14 @@ h1{ font-size: 23px;
         visibility: hidden;
     }
 
-
+/*
 img{
     max-height:500px;
     max-width:500px;
     height:auto;
     width:auto;
 }
-
+*/
 .fadeIn {
         -webkit-animation: animat_show 0.8s;
         animation: animat_show 0.8s;

@@ -293,15 +293,27 @@ div{
                 width: 500px;
                 margin: 0 auto;
             }
-            .timeline .timeline-item {
+            .timeline .timeline-item{
                 width: 100%;
                 float: left;
             }
             
-            .timeline .timeline-item .info, .timeline .timeline-item .year {
+
+            .timeline .timeline-item .info, .timeline .timeline-item .year:nth-child(odd) {
                /* color: #eee;*/
                 display: block;
                 float:left;
+                /*
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                transition: all 1s ease;
+                */
+            }
+
+            .timeline .timeline-item .info, .timeline .timeline-item .year:nth-child(even) {
+               /* color: #eee;*/
+                display: block;
+                float:right;
                 /*
                 -webkit-transition: all 1s ease;
                 -moz-transition: all 1s ease;

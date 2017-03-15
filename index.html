@@ -236,7 +236,7 @@
     <div class="row">
       <div class="large-8 large-centered columns">
           <footer>
-              <!--Page developed by <a href="https://github.com/H-Huang">Howard Huang</a> and <a href="https://github.com/paulinalei">Paulina Lei</a>. &copy; 2017 <a href="http://dailybruin.com/">Daily Bruin</a>.-->
+              <!--Page developed by <a href="https://github.com/siowleo" target="_blank">Leo Siow</a>, <a href="https://github.com/AustinEel" target="_blank">Austin Lee</a>, <a href="https://github.com/paulinalei" target="_blank">Paulina</a>, and <a href="https://github.com/H-Huang" target="_blank">Howard Huang</a>. &copy; 2017 <a href="http://dailybruin.com/">Daily Bruin</a>.-->
           </footer>
         </div>
     </div>
@@ -324,24 +324,11 @@
               <li class="spacer">&nbsp;</li>
               {{#each this}}
                 {{#compare score_team1 score_team2 operator=">"}}
-                  <div class="wrapper">
-                    <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
-                    <div class="tooltip"><h1>asdfasdfasdfadsf</h1></div>
-                  </div>
-                  <li class="game game-spacer">&nbsp;</li>
-                  <li class="game game-bottom ">{{team2}} <span>{{score_team2}}</span></li>
-                  <li class="spacer">&nbsp;</li>
-                {{else}}
-                  {{#compare score_team1 score_team2 operator="<"}}
-                    <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
-                    <li class="game game-spacer">&nbsp;</li>
-                    <li class="game game-bottom winner">{{team2}} <span>{{score_team2}}</span></li>
-                    <li class="spacer">&nbsp;</li>
-                  {{else}}
                     <div class="wrapper">
-                      <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
+                      <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
                       {{#if info_team1}}
                         <div class="custom-tooltip">
+                          <p>{{info_team1.name}}</p>
                           <img src="img/mascots/{{team1}}.png">
                           <p>Record: {{info_team1.record}}</p>
                           <p>Defense: {{info_team1.defense}}</p>
@@ -357,13 +344,81 @@
                       <li class="game game-bottom">{{team2}} <span>{{score_team2}}</span></li>
                       {{#if info_team2}}
                         <div class="custom-tooltip">
+                          <p>{{info_team2.name}}</p>
                           <img src="img/mascots/{{team2}}.png">
                           <p>Record: {{info_team2.record}}</p>
                           <p>Defense: {{info_team2.defense}}</p>
                           <p>Offense: {{info_team2.offense}}</p>
-                          {{#each info_team2.players}}
-                            <p>{{this}}</p>
-                          {{/each}}
+                          <p>Key players:
+                            {{info_team2.players}}
+                          </p>
+                        </div>
+                      {{/if}}
+                    </div>
+                    <li class="spacer">&nbsp;</li>
+                {{else}}
+                  {{#compare score_team1 score_team2 operator="<"}}
+                    <div class="wrapper">
+                      <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
+                      {{#if info_team1}}
+                        <div class="custom-tooltip">
+                          <p>{{info_team1.name}}</p>
+                          <img src="img/mascots/{{team1}}.png">
+                          <p>Record: {{info_team1.record}}</p>
+                          <p>Defense: {{info_team1.defense}}</p>
+                          <p>Offense: {{info_team1.offense}}</p>
+                          <p>Key players:
+                            {{info_team1.players}}
+                          </p>
+                        </div>
+                      {{/if}}
+                    </div>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <div class="wrapper">
+                      <li class="game game-bottom winner">{{team2}} <span>{{score_team2}}</span></li>
+                      {{#if info_team2}}
+                        <div class="custom-tooltip">
+                          <p>{{info_team2.name}}</p>
+                          <img src="img/mascots/{{team2}}.png">
+                          <p>Record: {{info_team2.record}}</p>
+                          <p>Defense: {{info_team2.defense}}</p>
+                          <p>Offense: {{info_team2.offense}}</p>
+                          <p>Key players:
+                            {{info_team2.players}}
+                          </p>
+                        </div>
+                      {{/if}}
+                    </div>
+                    <li class="spacer">&nbsp;</li>
+                  {{else}}
+                    <div class="wrapper">
+                      <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
+                      {{#if info_team1}}
+                        <div class="custom-tooltip">
+                          <p>{{info_team1.name}}</p>
+                          <img src="img/mascots/{{team1}}.png">
+                          <p>Record: {{info_team1.record}}</p>
+                          <p>Defense: {{info_team1.defense}}</p>
+                          <p>Offense: {{info_team1.offense}}</p>
+                          <p>Key players:
+                            {{info_team1.players}}
+                          </p>
+                        </div>
+                      {{/if}}
+                    </div>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <div class="wrapper">
+                      <li class="game game-bottom">{{team2}} <span>{{score_team2}}</span></li>
+                      {{#if info_team2}}
+                        <div class="custom-tooltip">
+                          <p>{{info_team2.name}}</p>
+                          <img src="img/mascots/{{team2}}.png">
+                          <p>Record: {{info_team2.record}}</p>
+                          <p>Defense: {{info_team2.defense}}</p>
+                          <p>Offense: {{info_team2.offense}}</p>
+                          <p>Key players:
+                            {{info_team2.players}}
+                          </p>
                         </div>
                       {{/if}}
                     </div>

@@ -440,3 +440,13 @@ img{
     width: 80%;
   }
 }
+
+@media (min-width: 750px) and (max-width: 1400px) {
+  .wrapper {
+    font-size: 40px;
+  }
+  .custom-tooltip {
+    width: 50%;
+    font-size: 40px;
+  }
+}

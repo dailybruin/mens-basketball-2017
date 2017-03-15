@@ -26,6 +26,7 @@ $.ajax({
   data = data.feed.entry;
   for (var obj in data) {
     obj = data[obj];
+    console.log(obj);
     var name = obj.gsx$team.$t;
     var info = obj.gsx$infoasbulletpointsundertheteamslogoasof31017.$t;
     var record = isSafe(info.split("Record: ")[1]) ? info.split("Record: ")[1].substr(0,4) : "";

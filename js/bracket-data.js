@@ -4,13 +4,16 @@ var bracket = {"round1": [], "round2": [], "round3": [], "round4": [], "round5":
 
 var conferences = {"East": [], "Midwest": [], "West": [], "South": []};
 
+
+
 class Team {
   constructor(name, record, offense, defense, players) {
     this.name = name;
     this.record = record;
     this.offense = offense;
     this.defense = defense;
-    this.players = players;
+    var trimmed = players.trim();
+    this.players = trimmed;
   }
 }
 
@@ -32,7 +35,7 @@ $.ajax({
     var record = isSafe(info.split("Record: ")[1]) ? info.split("Record: ")[1].substr(0,4) : "";
     var offense = isSafe(info.split("Offensive efficiency: ")[1]) ? info.split("Offensive efficiency: ")[1].substr(0,2).replace(/,/g,"") : "";
     var defense = isSafe(info.split("Defensive efficiency: ")[1]) ? info.split("Defensive efficiency: ")[1].substr(0,2).replace(/,/g,"") : "";
-    var players = isSafe(info.split("Players to Watch: ")[1]) ? info.split("Players to Watch: ")[1].replace(/ /g, "").split(",") : [];
+    var players = isSafe(info.split("Players to Watch: ")[1]) ? info.split("Players to Watch: ")[1] : "";
     map[name] = new Team(name, record, offense, defense, players);
     
     var num_rounds = 5;

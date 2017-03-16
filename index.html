@@ -25,48 +25,52 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Karla:700" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Raleway:600,900' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Chivo:300,400,900i" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" />
   <link rel="stylesheet" href="css/app.css" />
+
+  <script src="js/countUp.js"></script>
 </head>
 
 <body>
 
   <div class="container">
-    <div class="banner">
-      <h1 class="titles main-title" data-text-shadow="Ball or Nothing">Ball or Nothing</h1>
-    </div>
     <div class="row" id="top-section">
       <img src="http://dailybruin.com/images/2017/03/bball_cover.jpg" alt="UCLA March Madness Illustration">
     </div>
-    <div class="row court-section">
+    <div class="row collapse court-section fullWidth">
       <div class="banner">
-        <h1 class="titles" data-text-shadow="Interactive Graphic">Bruin basketball</h1>
+        <h1 class="titles" data-text-shadow="Interactive Graphic">BRUIN BASKETBALL</h1>
+        <div class="sub-banner">
+          <h1 class="sub-title">BALL OR NOTHING</h1>
+        </div>
       </div>
       <div class="small-12 large-12 columns" id="field-container">
         <img src="img/basketball_graphic.png" id="graphic-image" usemap="#planetmap">
         <map name="planetmap">
-          <area shape="circle" coords="670, 357, 55" a data-open="LonzoBall">
-          <area shape="circle" coords="192, 575, 55" a data-open="BryceAlford">
-          <area shape="circle" coords="916, 746, 55" a data-open="ThomasWelsh">
-          <area shape="circle" coords="426, 969, 55" a data-open="TJLeaf">
-          <area shape="circle" coords="1286, 954, 55" a data-open="IsaacHamilton">
-          <area shape="circle" coords="1430, 311, 55" a data-open="SteveAlford">
-          <area shape="circle" coords="1430, 465, 55" a data-open="AaronHoliday">
-          <area shape="circle" coords="1430, 621, 55" a data-open="IkeAnigbogu">
-          <area shape="circle" coords="1430, 776, 55" a data-open="GGGoloman">
+          <area shape="circle" coords="670, 263, 55" a data-open="LonzoBall">
+          <area shape="circle" coords="192, 481, 55" a data-open="BryceAlford">
+          <area shape="circle" coords="916, 652, 55" a data-open="ThomasWelsh">
+          <area shape="circle" coords="426, 875, 55" a data-open="TJLeaf">
+          <area shape="circle" coords="1286, 860, 55" a data-open="IsaacHamilton">
+          <area shape="circle" coords="1430, 217, 55" a data-open="SteveAlford">
+          <area shape="circle" coords="1430, 371, 55" a data-open="AaronHoliday">
+          <area shape="circle" coords="1430, 527, 55" a data-open="IkeAnigbogu">
+          <area shape="circle" coords="1430, 681, 55" a data-open="GGGoloman">
       </div>
-      <img class="seperator-images" src="img/horizontal/JHan.jpg">
+    </div>
+    <div class="row fullWidth separate-banner" style="background: 
+    linear-gradient(-75deg, rgba(112,68,255,0.55), rgba(79,199,255,0.55)),
+    url(img/horizontal/JHan.jpg); background-size:cover;">
+        <div class="text-banner"><h1 class = "titles" data-text-shadow="Bruins by the Numbers">| BRUINS BY THE NUMBERS</h1></div>
     </div>
     <div class="row number-section">
-      <div class = "banner">
-        <h1 class = "titles" data-text-shadow="Bruins by the Numbers">Bruins by the Numbers</h1>
-      </div>
-      <img class="seperator-images" src="img/horizontal/MB.jpg">
       <div class="bruin-by-numbers">
         <div class="number1">
-          <p class="number">91.3</p>
-          <p>Points UCLA averaged per game. The Bruins had one of the most electric offenses in the country and were ranked second nationally in offensive efficiency according to KenPom.com. They also led the NCAA in points per game by the end of the regular season.</p>
+          <p class="number">88.1</p>
+          <p>Points UCLA averaged per game. The Bruins had one of the most electric offenses in the country and were ranked third nationally in offensive efficiency according to KenPom.com. They also led the NCAA in points per game by the end of the regular season.</p>
         </div>
         <div class="number2">
           <p class="number">89</p>
@@ -89,13 +93,13 @@
           <p>Goal left for the team. In a postgame press conference, Lonzo Ball said the real season starts now. It’s the postseason and for the Bruins a chance to capture the 12th National title in program history and the first since 1995.</p>
         </div>
       </div>
-      <img class="seperator-images" src="img/horizontal/JHan2.jpg">
     </div>
-
+    <div class="row fullWidth separate-banner" style="background: 
+    linear-gradient(-75deg, rgba(112,68,255,0.55), rgba(79,199,255,0.55)),
+    url(img/horizontal/MB.jpg); background-size:cover;">
+        <div class="text-banner"><h1 class = "titles" data-text-shadow="Bruins by the Numbers">| TIMELINE</h1></div>
+    </div>
     <div class="row timeline-section">
-      <div class="banner">
-        <h1 class="titles" data-text-shadow="Timeline">Timeline</h1>
-      </div>
       <div class=" timeline">
         <div class="timeline-item fade">
           <div class="year">Preview<span class="marker"><span class="dot"></span></span>
@@ -277,12 +281,12 @@
       </div>
     </div>
 
-
+    <div class="row fullWidth separate-banner" style="background: 
+    linear-gradient(-75deg, rgba(112,68,255,0.55), rgba(79,199,255,0.55)),
+    url(img/horizontal/MB.jpg); background-size:cover;">
+        <div class="text-banner"><h1 class = "titles" data-text-shadow="Bruins by the Numbers">| ROAD TO THE FINAL FOUR</h1></div>
+    </div>
     <div class="row">
-      <div class = "banner">
-        <h1 class ="titles" data-text-shadow="2017 - March Madness">Road to the Final Four</h1>
-      </div>
-      <img class="seperator-images" src="img/horizontal/MZ.jpg">
       <div class="small-12 medium-12 columns">
         <div id="bracket-placeholder">
         </div>
@@ -291,7 +295,7 @@
 
     <div class="row">
         <footer>
-            Page developed by <a href="https://github.com/siowleo" target="_blank">Leo Siow</a>, <a href="https://github.com/AustinEel" target="_blank">Austin Lee</a>, <a href="https://github.com/paulinalei" target="_blank">Paulina Lei</a>, and <a href="https://github.com/H-Huang" target="_blank">Howard Huang</a>. &copy; 2017 <a href="http://dailybruin.com/">Daily Bruin</a>.
+            Page developed by <a href="https://github.com/zeehang">Michael Zhang</a>, <a href="https://github.com/siowleo" target="_blank">Leo Siow</a>, <a href="https://github.com/AustinEel" target="_blank">Austin Lee</a>, <a href="https://github.com/paulinalei" target="_blank">Paulina Lei</a>, and <a href="https://github.com/H-Huang" target="_blank">Howard Huang</a>. &copy; 2017 <a href="http://dailybruin.com/">Daily Bruin</a>.
         </footer>
     </div>
 

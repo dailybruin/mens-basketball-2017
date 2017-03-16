@@ -100,6 +100,7 @@
         <div class="text-banner"><h1 class = "titles" data-text-shadow="Bruins by the Numbers">| TIMELINE</h1></div>
     </div>
     <div class="row timeline-section">
+      <p class="blurb">It's been a long season for UCLA filled with big time upsets, down-to-the-wire games and highlight plays. Read through some of the most memorable moments of the season and click on the photo to read more from the Bruins' season.</p>
       <div class=" timeline">
         <div class="timeline-item fade">
           <div class="year">Preview<span class="marker"><span class="dot"></span></span>
@@ -286,8 +287,11 @@
     url(img/horizontal/MB.jpg); background-size:cover;">
         <div class="text-banner"><h1 class = "titles" data-text-shadow="Bruins by the Numbers">| ROAD TO THE FINAL FOUR</h1></div>
     </div>
-    <div class="row">
+    <div class="row fullWidth">
       <div class="small-12 medium-12 columns">
+        <p class="blurb">
+          64 teams have one goal - to win the national championship. Take a look at the teams' record, offensive and defensive efficiency and players to watch in the 2017 NCAA tournament.
+        </p>
         <div id="bracket-placeholder">
         </div>
       </div>
@@ -383,35 +387,61 @@
               {{#each this}}
                 {{#compare score_team1 score_team2 operator=">"}}
                     <div class="wrapper">
-                      <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
+                      <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
                       {{#if info_team1}}
-                        <div class="custom-tooltip">
-                          <p class="team-name">{{info_team1.name}}</p>
-                          <img src="img/mascots/{{team1}}.png">
-                          <br>
-                          <p>Record: {{info_team1.record}}</p>
-                          <p>Defense: {{info_team1.defense}}</p>
-                          <p>Offense: {{info_team1.offense}}</p>
-                          <p>Key players:
-                            {{info_team1.players}}
-                          </p>
+                        <div class="custom-tooltip row fullWidth">
+                          <div class="team-banner-name">
+                            {{info_team1.name}}
+                          </div>
+                          <div class="small-2 columns visible-for-medium-up">
+                            <div class="team-img"><img src="img/mascots/{{team1}}.png"></div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team1.record}}</div>
+                            <div class="row fullWidth bar-title">Record</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team1.defense}}</div>
+                            <div class="row fullWidth bar-title">Defense</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team1.offense}}</div>
+                            <div class="row fullWidth bar-title">Offense</div>
+                          </div>
+                          <div class="small-4 columns">
+                            <div class="row fullWidth bar-info players"> {{info_team1.players}}</div>
+                            <div class="row fullWidth bar-title">Key players</div>
+                          </div>
                         </div>
                       {{/if}}
                     </div>
                     <li class="game game-spacer">&nbsp;</li>
                     <div class="wrapper">
-                      <li class="game game-bottom">{{team2}} <span>{{score_team2}}</span></li>
+                      <li class="game game-top">{{team2}} <span>{{score_team2}}</span></li>
                       {{#if info_team2}}
-                        <div class="custom-tooltip">
-                          <p class="team-name">{{info_team2.name}}</p>
-                          <img src="img/mascots/{{team2}}.png">
-                          <br>
-                          <p>Record: {{info_team2.record}}</p>
-                          <p>Defense: {{info_team2.defense}}</p>
-                          <p>Offense: {{info_team2.offense}}</p>
-                          <p>Key players:
-                            {{info_team2.players}}
-                          </p>
+                        <div class="custom-tooltip row fullWidth">
+                          <div class="team-banner-name">
+                            {{info_team2.name}}
+                          </div>
+                          <div class="small-2 columns visible-for-medium-up">
+                            <div class="team-img"><img src="img/mascots/{{team2}}.png"></div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team2.record}}</div>
+                            <div class="row fullWidth bar-title">Record</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team2.defense}}</div>
+                            <div class="row fullWidth bar-title">Defense</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team2.offense}}</div>
+                            <div class="row fullWidth bar-title">Offense</div>
+                          </div>
+                          <div class="small-4 columns">
+                            <div class="row fullWidth bar-info players"> {{info_team2.players}}</div>
+                            <div class="row fullWidth bar-title">Key players</div>
+                          </div>
                         </div>
                       {{/if}}
                     </div>
@@ -421,33 +451,59 @@
                     <div class="wrapper">
                       <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
                       {{#if info_team1}}
-                        <div class="custom-tooltip">
-                          <p class="team-name">{{info_team1.name}}</p>
-                          <img src="img/mascots/{{team1}}.png">
-                          <br>
-                          <p>Record: {{info_team1.record}}</p>
-                          <p>Defense: {{info_team1.defense}}</p>
-                          <p>Offense: {{info_team1.offense}}</p>
-                          <p>Key players:
-                            {{info_team1.players}}
-                          </p>
+                        <div class="custom-tooltip row fullWidth">
+                          <div class="team-banner-name">
+                            {{info_team1.name}}
+                          </div>
+                          <div class="small-2 columns visible-for-medium-up">
+                            <div class="team-img"><img src="img/mascots/{{team1}}.png"></div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team1.record}}</div>
+                            <div class="row fullWidth bar-title">Record</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team1.defense}}</div>
+                            <div class="row fullWidth bar-title">Defense</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team1.offense}}</div>
+                            <div class="row fullWidth bar-title">Offense</div>
+                          </div>
+                          <div class="small-4 columns">
+                            <div class="row fullWidth bar-info players"> {{info_team1.players}}</div>
+                            <div class="row fullWidth bar-title">Key players</div>
+                          </div>
                         </div>
                       {{/if}}
                     </div>
                     <li class="game game-spacer">&nbsp;</li>
                     <div class="wrapper">
-                      <li class="game game-bottom winner">{{team2}} <span>{{score_team2}}</span></li>
+                      <li class="game game-top">{{team2}} <span>{{score_team2}}</span></li>
                       {{#if info_team2}}
-                        <div class="custom-tooltip">
-                          <p class="team-name">{{info_team2.name}}</p>
-                          <img src="img/mascots/{{team2}}.png">
-                          <br>
-                          <p>Record: {{info_team2.record}}</p>
-                          <p>Defense: {{info_team2.defense}}</p>
-                          <p>Offense: {{info_team2.offense}}</p>
-                          <p>Key players:
-                            {{info_team2.players}}
-                          </p>
+                        <div class="custom-tooltip row fullWidth">
+                          <div class="team-banner-name">
+                            {{info_team2.name}}
+                          </div>
+                          <div class="small-2 columns visible-for-medium-up">
+                            <div class="team-img"><img src="img/mascots/{{team2}}.png"></div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team2.record}}</div>
+                            <div class="row fullWidth bar-title">Record</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team2.defense}}</div>
+                            <div class="row fullWidth bar-title">Defense</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team2.offense}}</div>
+                            <div class="row fullWidth bar-title">Offense</div>
+                          </div>
+                          <div class="small-4 columns">
+                            <div class="row fullWidth bar-info players"> {{info_team2.players}}</div>
+                            <div class="row fullWidth bar-title">Key players</div>
+                          </div>
                         </div>
                       {{/if}}
                     </div>
@@ -456,33 +512,59 @@
                     <div class="wrapper">
                       <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
                       {{#if info_team1}}
-                        <div class="custom-tooltip">
-                          <p class="team-name">{{info_team1.name}}</p>
-                          <img src="img/mascots/{{team1}}.png">
-                          <br>
-                          <p>Record: {{info_team1.record}}</p>
-                          <p>Defense: {{info_team1.defense}}</p>
-                          <p>Offense: {{info_team1.offense}}</p>
-                          <p>Key players:
-                            {{info_team1.players}}
-                          </p>
+                        <div class="custom-tooltip row fullWidth">
+                          <div class="team-banner-name">
+                            {{info_team1.name}}
+                          </div>
+                          <div class="small-2 columns visible-for-medium-up">
+                            <div class="team-img"><img src="img/mascots/{{team1}}.png"></div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team1.record}}</div>
+                            <div class="row fullWidth bar-title">Record</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team1.defense}}</div>
+                            <div class="row fullWidth bar-title">Defense</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team1.offense}}</div>
+                            <div class="row fullWidth bar-title">Offense</div>
+                          </div>
+                          <div class="small-4 columns">
+                            <div class="row fullWidth bar-info players"> {{info_team1.players}}</div>
+                            <div class="row fullWidth bar-title">Key players</div>
+                          </div>
                         </div>
                       {{/if}}
                     </div>
                     <li class="game game-spacer">&nbsp;</li>
                     <div class="wrapper">
-                      <li class="game game-bottom">{{team2}} <span>{{score_team2}}</span></li>
+                      <li class="game game-top">{{team2}} <span>{{score_team2}}</span></li>
                       {{#if info_team2}}
-                        <div class="custom-tooltip">
-                          <p class="team-name">{{info_team2.name}}</p>
-                          <img src="img/mascots/{{team2}}.png">
-                          <br>
-                          <p>Record: {{info_team2.record}}</p>
-                          <p>Defense: {{info_team2.defense}}</p>
-                          <p>Offense: {{info_team2.offense}}</p>
-                          <p>Key players:
-                            {{info_team2.players}}
-                          </p>
+                        <div class="custom-tooltip row fullWidth">
+                          <div class="team-banner-name">
+                            {{info_team2.name}}
+                          </div>
+                          <div class="small-2 columns visible-for-medium-up">
+                            <div class="team-img"><img src="img/mascots/{{team2}}.png"></div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team2.record}}</div>
+                            <div class="row fullWidth bar-title">Record</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team2.defense}}</div>
+                            <div class="row fullWidth bar-title">Defense</div>
+                          </div>
+                          <div class="small-2 columns">
+                            <div class="row fullWidth bar-info">{{info_team2.offense}}</div>
+                            <div class="row fullWidth bar-title">Offense</div>
+                          </div>
+                          <div class="small-4 columns">
+                            <div class="row fullWidth bar-info players"> {{info_team2.players}}</div>
+                            <div class="row fullWidth bar-title">Key players</div>
+                          </div>
                         </div>
                       {{/if}}
                     </div>

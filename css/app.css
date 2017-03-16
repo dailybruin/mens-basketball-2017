@@ -253,13 +253,13 @@ li.game-bottom{
 }
 
 .wrapper .custom-tooltip {
-  border: 2px solid #3377ff;
   background: white;
   color: black;
   opacity: 0;
   pointer-events: none;
-  left: 15vw;
-  position: absolute;
+  position: fixed;
+  width: 100%;
+  height: 132px;
   -webkit-transform: translateY(10px);
      -moz-transform: translateY(10px);
       -ms-transform: translateY(10px);
@@ -285,6 +285,7 @@ li.game-bottom{
       -ms-transform: translateY(0px);
        -o-transform: translateY(0px);
           transform: translateY(0px);
+    bottom:0px;
 }
 
 .team-name {
@@ -301,18 +302,51 @@ li.game-bottom{
 }
 
 .custom-tooltip {
-  width: 15vw;
   text-align: center;
-  padding: 0.5%;
   font-family: 'Lato', sans-serif;
+  bottom: -10px;
+  float: left;
+  
 }
 
-.custom-tooltip img {
-  width: 80%;
+.custom-tooltip .team-img{
+  height: 200px;
   display: block;
-  margin: auto;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(-40px);
+  /*transform: translateX(-20px);*/
+  background-color: white;
+  -webkit-box-shadow: 0px -2px 31px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px -2px 31px -7px rgba(0,0,0,0.75);
+  box-shadow: 0px -2px 31px -7px rgba(0,0,0,0.75);
 }
 
+.custom-tooltip .team-img img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  
+}
+
+.bar-title{
+  height:30px;
+}
+
+.bar-info{
+  height: 70px;
+  line-height:70px;
+  font-size: 40px;
+  font-weight: 900;
+  font-style: italic;
+  border-bottom: 1px solid black;
+}
+
+.players{
+  font-size:20px;
+  font-weight: 700;
+}
 /* FINISH BRACKET STYLING */
 
 div {
@@ -538,4 +572,14 @@ footer {
   position: absolute;
   bottom: 10px;
   left: 10px;
+}
+
+.team-banner-name{
+  background-color:yellow;
+}
+
+.blurb{
+  width: 80%;
+  margin: 10px auto;
+  font-size: 18px;
 }

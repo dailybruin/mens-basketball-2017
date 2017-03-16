@@ -53,6 +53,7 @@ h1 {
 /* top part */
 
 #top-section {
+  margin-top: 40px;
   max-width: 100vw;
 }
 
@@ -244,8 +245,9 @@ li.game-bottom{
 }
 
 .wrapper .custom-tooltip {
-  background: #1496bb;
-  color: #fff;
+  border: 2px solid #3377ff;
+  background: white;
+  color: black;
   opacity: 0;
   pointer-events: none;
   left: 15vw;
@@ -275,6 +277,10 @@ li.game-bottom{
       -ms-transform: translateY(0px);
        -o-transform: translateY(0px);
           transform: translateY(0px);
+}
+
+.team-name {
+  font-size: 20px;
 }
 
 /* IE can just show/hide with no transition */
@@ -340,6 +346,7 @@ div {
 .timeline .timeline-item .year {
   font-size: 24px;
   font-weight: bold;
+  text-align: center;
   width: 22%;
 }
 
@@ -478,4 +485,10 @@ img{
     width: 25vw;
     font-size: 20px;
   }
+}
+
+footer {
+  text-align: right;
+  color: gray;
+  font-size: 11px;
 }

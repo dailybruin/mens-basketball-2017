@@ -9,7 +9,7 @@
   <meta property="og:url" content="http://graphics.dailybruin.com/baseball-2017" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Ball or Nothing | Daily Bruin" />
-  <meta property="og:description" content="It's ball or nothing for UCLA's men's basketball team." />
+  <meta property="og:description" content="It's ball or nothing for the UCLA's men's basketball team as it heads into the NCAA tournament. Win six games and they'll hoist a championship banner. Lose and the season is over." />
   <meta property="og:image" content="http://dailybruin.com/images/2017/03/bball_cover.jpg" />
   <meta property="og:image:width" content="1920" />
   <meta property="og:image:height" content="1080" />
@@ -41,7 +41,7 @@
     </div>
     <div class="row court-section">
       <div class="banner">
-        <h1 class="titles" data-text-shadow="Interactive Graphic">Interactive Graphic</h1>
+        <h1 class="titles" data-text-shadow="Interactive Graphic">Bruin basketball</h1>
       </div>
       <div class="small-12 large-12 columns" id="field-container">
         <img src="img/basketball_graphic.png" id="graphic-image" usemap="#planetmap">
@@ -224,7 +224,7 @@
 
     <div class="row">
       <div class = "banner">
-        <h1 class ="titles" data-text-shadow="2017 - March Madness">2017 - March Madness</h1>
+        <h1 class ="titles" data-text-shadow="2017 - March Madness">Road to the Final Four</h1>
       </div>
       <img class="seperator-images" src="img/horizontal/MZ.jpg">
       <div class="small-12 medium-12 columns">
@@ -234,11 +234,9 @@
     </div>
 
     <div class="row">
-      <div class="large-8 large-centered columns">
-          <footer>
-              <!--Page developed by <a href="https://github.com/siowleo" target="_blank">Leo Siow</a>, <a href="https://github.com/AustinEel" target="_blank">Austin Lee</a>, <a href="https://github.com/paulinalei" target="_blank">Paulina</a>, and <a href="https://github.com/H-Huang" target="_blank">Howard Huang</a>. &copy; 2017 <a href="http://dailybruin.com/">Daily Bruin</a>.-->
-          </footer>
-        </div>
+        <footer>
+            Page developed by <a href="https://github.com/siowleo" target="_blank">Leo Siow</a>, <a href="https://github.com/AustinEel" target="_blank">Austin Lee</a>, <a href="https://github.com/paulinalei" target="_blank">Paulina Lei</a>, and <a href="https://github.com/H-Huang" target="_blank">Howard Huang</a>. &copy; 2017 <a href="http://dailybruin.com/">Daily Bruin</a>.
+        </footer>
     </div>
 
 
@@ -328,8 +326,9 @@
                       <li class="game game-top winner">{{team1}} <span>{{score_team1}}</span></li>
                       {{#if info_team1}}
                         <div class="custom-tooltip">
-                          <p>{{info_team1.name}}</p>
+                          <p class="team-name">{{info_team1.name}}</p>
                           <img src="img/mascots/{{team1}}.png">
+                          <br>
                           <p>Record: {{info_team1.record}}</p>
                           <p>Defense: {{info_team1.defense}}</p>
                           <p>Offense: {{info_team1.offense}}</p>
@@ -344,8 +343,9 @@
                       <li class="game game-bottom">{{team2}} <span>{{score_team2}}</span></li>
                       {{#if info_team2}}
                         <div class="custom-tooltip">
-                          <p>{{info_team2.name}}</p>
+                          <p class="team-name">{{info_team2.name}}</p>
                           <img src="img/mascots/{{team2}}.png">
+                          <br>
                           <p>Record: {{info_team2.record}}</p>
                           <p>Defense: {{info_team2.defense}}</p>
                           <p>Offense: {{info_team2.offense}}</p>
@@ -362,8 +362,9 @@
                       <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
                       {{#if info_team1}}
                         <div class="custom-tooltip">
-                          <p>{{info_team1.name}}</p>
+                          <p class="team-name">{{info_team1.name}}</p>
                           <img src="img/mascots/{{team1}}.png">
+                          <br>
                           <p>Record: {{info_team1.record}}</p>
                           <p>Defense: {{info_team1.defense}}</p>
                           <p>Offense: {{info_team1.offense}}</p>
@@ -378,8 +379,9 @@
                       <li class="game game-bottom winner">{{team2}} <span>{{score_team2}}</span></li>
                       {{#if info_team2}}
                         <div class="custom-tooltip">
-                          <p>{{info_team2.name}}</p>
+                          <p class="team-name">{{info_team2.name}}</p>
                           <img src="img/mascots/{{team2}}.png">
+                          <br>
                           <p>Record: {{info_team2.record}}</p>
                           <p>Defense: {{info_team2.defense}}</p>
                           <p>Offense: {{info_team2.offense}}</p>
@@ -395,8 +397,9 @@
                       <li class="game game-top">{{team1}} <span>{{score_team1}}</span></li>
                       {{#if info_team1}}
                         <div class="custom-tooltip">
-                          <p>{{info_team1.name}}</p>
+                          <p class="team-name">{{info_team1.name}}</p>
                           <img src="img/mascots/{{team1}}.png">
+                          <br>
                           <p>Record: {{info_team1.record}}</p>
                           <p>Defense: {{info_team1.defense}}</p>
                           <p>Offense: {{info_team1.offense}}</p>
@@ -411,8 +414,9 @@
                       <li class="game game-bottom">{{team2}} <span>{{score_team2}}</span></li>
                       {{#if info_team2}}
                         <div class="custom-tooltip">
-                          <p>{{info_team2.name}}</p>
+                          <p class="team-name">{{info_team2.name}}</p>
                           <img src="img/mascots/{{team2}}.png">
+                          <br>
                           <p>Record: {{info_team2.record}}</p>
                           <p>Defense: {{info_team2.defense}}</p>
                           <p>Offense: {{info_team2.offense}}</p>

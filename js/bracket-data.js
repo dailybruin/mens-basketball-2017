@@ -32,7 +32,7 @@ $.ajax({
     console.log(obj);
     var name = obj.gsx$team.$t;
     var info = obj.gsx$infoasbulletpointsundertheteamslogoasof31017.$t;
-    var record = isSafe(info.split("Record: ")[1]) ? info.split("Record: ")[1].substr(0,4) : "";
+    var record = isSafe(info.split("Record: ")[1]) ? info.split("Record: ")[1].substr(0,5).replace(",", "") : "";
     var offense = isSafe(info.split("Offensive efficiency: ")[1]) ? info.split("Offensive efficiency: ")[1].substr(0,2).replace(/,/g,"") : "";
     var defense = isSafe(info.split("Defensive efficiency: ")[1]) ? info.split("Defensive efficiency: ")[1].substr(0,2).replace(/,/g,"") : "";
     var players = isSafe(info.split("Players to Watch: ")[1]) ? info.split("Players to Watch: ")[1] : "";
